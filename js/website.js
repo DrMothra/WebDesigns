@@ -21,6 +21,8 @@ Website.prototype.createScene = function() {
     //Create scene
     BaseApp.prototype.createScene.call(this);
 
+    var _this = this;
+
     //Load floor grid
     var width = 420;
     var height = 640;
@@ -31,6 +33,52 @@ Website.prototype.createScene = function() {
     grid.name = 'grid';
     grid.rotation.x = -Math.PI/2;
     this.scene.add(grid);
+    //Load in objects
+    var manager = new THREE.LoadingManager();
+    manager.onProgress = function(item, loaded, total) {
+        console.log(item, loaded, total);
+    };
+
+    var modelTexture = new THREE.Texture();
+
+    var onProgress = function ( xhr ) {
+        if ( xhr.lengthComputable ) {
+            var percentComplete = xhr.loaded / xhr.total * 100;
+            console.log( Math.round(percentComplete, 2) + '% downloaded' );
+        }
+    };
+
+    var onError = function ( xhr ) {
+    };
+
+
+    var imageLoader = new THREE.ImageLoader( manager );
+    imageLoader.load( 'images/webGL.jpg', function ( image ) {
+        modelTexture.image = image;
+        modelTexture.needsUpdate = true;
+    } );
+
+    // model
+
+    var modelLoader = new THREE.OBJLoader( manager );
+    modelLoader.load( 'models/displayTile.obj', function ( object ) {
+
+        object.traverse( function ( child ) {
+
+            if ( child instanceof THREE.Mesh ) {
+
+                child.material.map = modelTexture;
+
+            }
+
+        } );
+
+        _this.scene.add( object );
+        var newObj = object.clone();
+        _this.scene.add(newObj);
+        newObj.position.x = 30;
+
+    }, onProgress, onError );
 };
 
 Website.prototype.update = function() {
