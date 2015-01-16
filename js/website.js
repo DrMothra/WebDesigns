@@ -33,93 +33,24 @@ Website.prototype.createScene = function() {
     grid.name = 'grid';
     grid.rotation.x = -Math.PI/2;
     this.scene.add(grid);
-    //Load in objects
-    var totalObjects = 3;
-    var displayGroup = null;
-    var tile = null;
-    var tileMesh = null;
-    var textures = [];
-    var displayImages = ['research.jpg', 'projects.jpg', 'portfolio.jpg', 'webGL.jpg', 'traject.jpg', 'blog.jpg', 'contact.jpg'];
 
-    var manager = new THREE.LoadingManager();
-    manager.onProgress = function(item, loaded, total) {
-        console.log(item, loaded, total);
-        if(loaded == total) {
-            console.log('All objects loaded');
-            displayGroup.add(tile);
-            displayGroup.rotation.x = Math.PI/2;
-            displayGroup.scale.set(10, 10, 10);
-            tileMesh.material.map = textures[6];
-        }
+    //Load in scene
+    var _this = this;
+    var loader = new THREE.SceneLoader();
+    loader.addGeometryHandler( 'obj', THREE.OBJLoader );
+
+    var callbackProgress = function( progress, result ) {
+        console.log('Loading...');
     };
 
-
-
-    var onError = function ( xhr ) {
+    var callbackFinished = function( result) {
+        console.log('All loaded');
+        _this.scene.add(result.scene);
     };
 
+    loader.callbackProgress = callbackProgress;
 
-    var imageLoader = new THREE.ImageLoader( manager );
-    var tex;
-    for(var i=0; i<displayImages.length; ++i) {
-        imageLoader.load( 'images/'+displayImages[i], function ( image ) {
-            tex = new THREE.Texture(image);
-            textures.push(tex);
-            tex.needsUpdate = true;
-        } );
-    }
-
-
-    // model
-
-    var modelLoader = new THREE.OBJLoader( manager );
-    var surroundMat = new THREE.MeshPhongMaterial( {color: 0x0000ff});
-
-    modelLoader.load( 'models/surround.obj', function ( object ) {
-
-        object.traverse( function ( child ) {
-
-            if ( child instanceof THREE.Mesh ) {
-
-                child.material = surroundMat;
-
-            }
-
-        } );
-
-        displayGroup = object;
-        displayGroup.name = 'displayGroup';
-        _this.scene.add( displayGroup );
-        /*
-         var newObj = object.clone();
-         _this.scene.add(newObj);
-         newObj.position.x = 30;
-         */
-
-    }, null, onError );
-
-    modelLoader.load( 'models/displayFront.obj', function ( object ) {
-
-        object.traverse( function ( child ) {
-
-            if ( child instanceof THREE.Mesh ) {
-
-                //child.material.map = textures[0];
-                tileMesh = child;
-
-            }
-
-        } );
-
-        tile = object;
-        tile.name = 'tile';
-        /*
-        var newObj = object.clone();
-        _this.scene.add(newObj);
-        newObj.position.x = 30;
-        */
-
-    }, null, onError );
+    loader.load( "scenes/website.js", callbackFinished);
 
 
 };
