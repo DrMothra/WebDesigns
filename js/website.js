@@ -34,51 +34,94 @@ Website.prototype.createScene = function() {
     grid.rotation.x = -Math.PI/2;
     this.scene.add(grid);
     //Load in objects
+    var totalObjects = 3;
+    var displayGroup = null;
+    var tile = null;
+    var tileMesh = null;
+    var textures = [];
+    var displayImages = ['research.jpg', 'projects.jpg', 'portfolio.jpg', 'webGL.jpg', 'traject.jpg', 'blog.jpg', 'contact.jpg'];
+
     var manager = new THREE.LoadingManager();
     manager.onProgress = function(item, loaded, total) {
         console.log(item, loaded, total);
-    };
-
-    var modelTexture = new THREE.Texture();
-
-    var onProgress = function ( xhr ) {
-        if ( xhr.lengthComputable ) {
-            var percentComplete = xhr.loaded / xhr.total * 100;
-            console.log( Math.round(percentComplete, 2) + '% downloaded' );
+        if(loaded == total) {
+            console.log('All objects loaded');
+            displayGroup.add(tile);
+            displayGroup.rotation.x = Math.PI/2;
+            displayGroup.scale.set(10, 10, 10);
+            tileMesh.material.map = textures[6];
         }
     };
+
+
 
     var onError = function ( xhr ) {
     };
 
 
     var imageLoader = new THREE.ImageLoader( manager );
-    imageLoader.load( 'images/webGL.jpg', function ( image ) {
-        modelTexture.image = image;
-        modelTexture.needsUpdate = true;
-    } );
+    var tex;
+    for(var i=0; i<displayImages.length; ++i) {
+        imageLoader.load( 'images/'+displayImages[i], function ( image ) {
+            tex = new THREE.Texture(image);
+            textures.push(tex);
+            tex.needsUpdate = true;
+        } );
+    }
+
 
     // model
 
     var modelLoader = new THREE.OBJLoader( manager );
-    modelLoader.load( 'models/displayTile.obj', function ( object ) {
+    var surroundMat = new THREE.MeshPhongMaterial( {color: 0x0000ff});
+
+    modelLoader.load( 'models/surround.obj', function ( object ) {
 
         object.traverse( function ( child ) {
 
             if ( child instanceof THREE.Mesh ) {
 
-                child.material.map = modelTexture;
+                child.material = surroundMat;
 
             }
 
         } );
 
-        _this.scene.add( object );
+        displayGroup = object;
+        displayGroup.name = 'displayGroup';
+        _this.scene.add( displayGroup );
+        /*
+         var newObj = object.clone();
+         _this.scene.add(newObj);
+         newObj.position.x = 30;
+         */
+
+    }, null, onError );
+
+    modelLoader.load( 'models/displayFront.obj', function ( object ) {
+
+        object.traverse( function ( child ) {
+
+            if ( child instanceof THREE.Mesh ) {
+
+                //child.material.map = textures[0];
+                tileMesh = child;
+
+            }
+
+        } );
+
+        tile = object;
+        tile.name = 'tile';
+        /*
         var newObj = object.clone();
         _this.scene.add(newObj);
         newObj.position.x = 30;
+        */
 
-    }, onProgress, onError );
+    }, null, onError );
+
+
 };
 
 Website.prototype.update = function() {

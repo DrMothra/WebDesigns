@@ -1,7 +1,7 @@
 # 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
-# File Created: 15.01.2015 00:15:00
+# File Created: 15.01.2015 00:23:00
 
-mtllib displayTile.mtl
+mtllib displayBox.mtl
 
 #
 # object surround
