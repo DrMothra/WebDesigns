@@ -23,6 +23,12 @@ Website.prototype.createScene = function() {
 
     var _this = this;
 
+    THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
+
+        console.log( item, loaded, total );
+
+    };
+
     //Load floor grid
     var width = 420;
     var height = 640;
@@ -37,7 +43,8 @@ Website.prototype.createScene = function() {
     //Load in scene
     var _this = this;
     var loader = new THREE.SceneLoader();
-    loader.addGeometryHandler( 'obj', THREE.OBJLoader );
+    loader.addHierarchyHandler( "obj", THREE.OBJLoader );
+
 
     var callbackProgress = function( progress, result ) {
         console.log('Loading...');
@@ -46,11 +53,14 @@ Website.prototype.createScene = function() {
     var callbackFinished = function( result) {
         console.log('All loaded');
         _this.scene.add(result.scene);
+        //DEBUG
+        //console.log('Scene =', result.scene);
+
     };
 
     loader.callbackProgress = callbackProgress;
 
-    loader.load( "scenes/website.js", callbackFinished);
+    loader.load( "scenes/webScene.js", callbackFinished);
 
 
 };
