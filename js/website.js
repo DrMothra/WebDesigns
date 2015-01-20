@@ -43,11 +43,12 @@ Website.prototype.createScene = function() {
     //Load in scene
     var _this = this;
     var loader = new THREE.SceneLoader();
-    loader.addHierarchyHandler( "obj", THREE.OBJLoader );
-
+    //loader.addHierarchyHandler( "obj", THREE.OBJLoader );
+    //loader.addGeometryHandler( "obj", THREE.OBJLoader );
+    loader.addGeometryHandler( "binary", THREE.BinaryLoader );
 
     var callbackProgress = function( progress, result ) {
-        console.log('Loading...');
+
     };
 
     var callbackFinished = function( result) {
