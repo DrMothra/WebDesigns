@@ -29,21 +29,21 @@ Website.prototype.createScene = function() {
 
     };
 
-    //Load floor grid
-    var width = 420;
-    var height = 640;
-    var gridGeom = new THREE.PlaneGeometry(width, height);
-    var texture = THREE.ImageUtils.loadTexture("images/grid.png");
-    var gridMaterial = new THREE.MeshLambertMaterial({ map : texture, transparent: true, opacity: 0.9});
-    var grid = new THREE.Mesh(gridGeom, gridMaterial);
-    grid.name = 'grid';
-    grid.rotation.x = -Math.PI/2;
-    this.scene.add(grid);
+    //Load floor
+    var width = 900;
+    var height = 200;
+    var floorGeom = new THREE.PlaneGeometry(width, height);
+    var floorMaterial = new THREE.MeshLambertMaterial({ color: 0x0000aa });
+    var floor = new THREE.Mesh(floorGeom, floorMaterial);
+    floor.name = 'floor';
+    floor.position.y = -50;
+    floor.rotation.x = -Math.PI/2;
+    this.scene.add(floor);
 
     //Load in scene
     var _this = this;
     var loader = new THREE.SceneLoader();
-    //loader.addHierarchyHandler( "obj", THREE.OBJLoader );
+    loader.addHierarchyHandler( "obj", THREE.OBJLoader );
     //loader.addGeometryHandler( "obj", THREE.OBJLoader );
     loader.addGeometryHandler( "binary", THREE.BinaryLoader );
 
