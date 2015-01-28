@@ -9,14 +9,23 @@
 
     "objects": {
 
-		"topic1" : {
+		"base": {
+			"geometry" : "platform",
+			"material" : "shinyPurple",
+			"position" : [ 0, -100, 0 ],
+			"rotation" : [ 0, 0, 0 ],
+			"scale"	   : [ 80, 80, 80 ],
+			"visible"  : true
+		},
+
+		"topic0" : {
 			"position" : [ -300, 0, 0 ],
 			"rotation" : [ 0, 0, 0 ],
 			"scale"	   : [ 1, 1, 1 ],
 			"visible"  : true,
 			"children" : {
 
-				"surround1" : {
+				"surround0" : {
 					"geometry" : "displayCover",
 					"material" : "shinyGrey",
 					"position" : [ 0, 0, 0 ],
@@ -25,7 +34,7 @@
 					"visible"  : true
 				},
 
-				"display1" : {
+				"display0" : {
 					"geometry" : "displayFront",
 					"material" : "research",
 					"position" : [ 0, 0, 0],
@@ -37,14 +46,14 @@
 		},
 
 
-		"topic2" : {
+		"topic1" : {
 			"position" :[ -200, 0, 0 ],
 			"rotation" : [ 0, 0, 0 ],
 			"scale"	   : [ 1, 1, 1 ],
 			"visible"  : true,
 			"children" : {
 
-				"surround2" : {
+				"surround1" : {
 						"geometry" : "displayCover",
 							"material" : "shinyGrey",
 							"position" : [ 0, 0, 0 ],
@@ -53,7 +62,7 @@
 							"visible"  : true
 				},
 
-				"display2" : {
+				"display1" : {
 						"geometry" : "displayFront",
 							"material" : "projects",
 							"position" : [ 0, 0, 0],
@@ -64,8 +73,36 @@
 			}
 		},
 
-		"topic3" : {
+		"topic2" : {
 			"position" : [ -100, 0, 0 ],
+			"rotation" : [ 0, 0, 0 ],
+			"scale"	   : [ 1, 1, 1 ],
+			"visible"  : true,
+			"children" : {
+
+				"surround2" : {
+					"geometry" : "displayCover",
+						"material" : "shinyGrey",
+						"position" : [ 0, 0, 0 ],
+						"rotation" : [ 1.5, 0, 0 ],
+						"scale"	   : [ 15, 15, 15 ],
+						"visible"  : true
+				},
+
+				"display2" : {
+					"geometry" : "displayFront",
+						"material" : "portfolio",
+						"position" : [ 0, 0, 0],
+						"rotation" : [ 1.5, 0, 0 ],
+						"scale"	   : [ 15, 15, 15 ],
+						"visible" : true
+				}
+			}
+		},
+
+
+		"topic3" : {
+			"position" :[ 0, 0, 0 ],
 			"rotation" : [ 0, 0, 0 ],
 			"scale"	   : [ 1, 1, 1 ],
 			"visible"  : true,
@@ -82,34 +119,6 @@
 
 				"display3" : {
 					"geometry" : "displayFront",
-						"material" : "portfolio",
-						"position" : [ 0, 0, 0],
-						"rotation" : [ 1.5, 0, 0 ],
-						"scale"	   : [ 15, 15, 15 ],
-						"visible" : true
-				}
-			}
-		},
-
-
-		"topic4" : {
-			"position" :[ 0, 0, 0 ],
-			"rotation" : [ 0, 0, 0 ],
-			"scale"	   : [ 1, 1, 1 ],
-			"visible"  : true,
-			"children" : {
-
-				"surround4" : {
-					"geometry" : "displayCover",
-						"material" : "shinyGrey",
-						"position" : [ 0, 0, 0 ],
-						"rotation" : [ 1.5, 0, 0 ],
-						"scale"	   : [ 15, 15, 15 ],
-						"visible"  : true
-				},
-
-				"display4" : {
-					"geometry" : "displayFront",
 						"material" : "webGL",
 						"position" : [ 0, 0, 0],
 						"rotation" : [ 1.5, 0, 0 ],
@@ -119,8 +128,35 @@
 			}
 		},
 
-		"topic5" : {
+		"topic4" : {
 			"position" :[ 100, 0, 0 ],
+			"rotation" : [ 0, 0, 0 ],
+			"scale"	   : [ 1, 1, 1 ],
+			"visible"  : true,
+			"children" : {
+
+				"surround4" : {
+					"geometry" : "displayCover",
+					"material" : "shinyGrey",
+					"position" : [ 0, 0, 0 ],
+					"rotation" : [ 1.5, 0, 0 ],
+					"scale"	   : [ 15, 15, 15 ],
+					"visible"  : true
+				},
+
+				"display4" : {
+					"geometry" : "displayFront",
+					"material" : "traject",
+					"position" : [ 0, 0, 0],
+					"rotation" : [ 1.5, 0, 0 ],
+					"scale"	   : [ 15, 15, 15 ],
+					"visible" : true
+				}
+			}
+		},
+
+		"topic5" : {
+			"position" : [ 200, 0, 0 ],
 			"rotation" : [ 0, 0, 0 ],
 			"scale"	   : [ 1, 1, 1 ],
 			"visible"  : true,
@@ -137,7 +173,7 @@
 
 				"display5" : {
 					"geometry" : "displayFront",
-					"material" : "traject",
+					"material" : "blog",
 					"position" : [ 0, 0, 0],
 					"rotation" : [ 1.5, 0, 0 ],
 					"scale"	   : [ 15, 15, 15 ],
@@ -146,8 +182,9 @@
 			}
 		},
 
+
 		"topic6" : {
-			"position" : [ 200, 0, 0 ],
+			"position" :[ 300, 0, 0 ],
 			"rotation" : [ 0, 0, 0 ],
 			"scale"	   : [ 1, 1, 1 ],
 			"visible"  : true,
@@ -163,34 +200,6 @@
 				},
 
 				"display6" : {
-					"geometry" : "displayFront",
-					"material" : "blog",
-					"position" : [ 0, 0, 0],
-					"rotation" : [ 1.5, 0, 0 ],
-					"scale"	   : [ 15, 15, 15 ],
-					"visible" : true
-				}
-			}
-		},
-
-
-		"topic7" : {
-			"position" :[ 300, 0, 0 ],
-			"rotation" : [ 0, 0, 0 ],
-			"scale"	   : [ 1, 1, 1 ],
-			"visible"  : true,
-			"children" : {
-
-				"surround7" : {
-					"geometry" : "displayCover",
-					"material" : "shinyGrey",
-					"position" : [ 0, 0, 0 ],
-					"rotation" : [ 1.5, 0, 0 ],
-					"scale"	   : [ 15, 15, 15 ],
-					"visible"  : true
-				},
-
-				"display7" : {
 					"geometry" : "displayFront",
 					"material" : "contact",
 					"position" : [ 0, 0, 0],
@@ -212,6 +221,11 @@
 		"displayFront": {
 			"type": "binary",
 			"url" : "models/displayFront.js"
+		},
+
+		"platform": {
+			"type": "binary",
+			"url" : "models/platform.js"
 		}
 	},
 
@@ -220,6 +234,11 @@
 			"type": "MeshPhongMaterial",
 			"parameters": { "color": 6710886, "ambient": 6710886, "specular": 2236962, "shininess": 40 }
         },
+
+		"shinyPurple": {
+			"type": "MeshPhongMaterial",
+			"parameters": { "color": 3421289, "ambient": 3421289, "specular": 2236962, "shininess": 40 }
+		},
 
 		"basicGrey": {
 			"type": "MeshBasicMaterial",

@@ -22,4 +22,5 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     /* set margin to 0 and overflow to hidden, to go fullscreen */
     margin: 0;
     overflow: hidden;
+    color: #000;
 }
