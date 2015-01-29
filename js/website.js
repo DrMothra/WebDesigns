@@ -3,74 +3,6 @@
  */
 //Visualisation framework
 
-function createLabel(name, position, scale, colour, fontSize, opacity) {
-
-    var fontface = "Arial";
-    var borderThickness = 5;
-
-    var canvas = document.createElement('canvas');
-    var context = canvas.getContext('2d');
-    context.font = fontSize + "px " + fontface;
-
-    var metrics = context.measureText( name );
-    var textWidth = metrics.width;
-
-    //Background
-    context.fillStyle = "rgba(255, 255, 255, 1.0)";
-
-    //Border
-    context.strokeStyle = "rgba(0, 0, 255, 1.0)";
-
-    context.lineWidth = borderThickness;
-
-    roundRect(context, borderThickness/2, borderThickness/2, textWidth + borderThickness, fontSize * 1.4 + borderThickness, 20);
-
-    //Text
-    context.fillStyle = "rgba(0, 0, 0, 1.0)";
-    context.fillText( name, borderThickness, fontSize + borderThickness);
-
-    // canvas contents will be used for a texture
-    var texture = new THREE.Texture(canvas);
-    texture.needsUpdate = true;
-
-    //texture.needsUpdate = true;
-    var spriteMaterial = new THREE.SpriteMaterial({
-            //color: color,
-            transparent: false,
-            opacity: opacity,
-            useScreenCoordinates: false,
-            blending: THREE.AdditiveBlending,
-            map: texture}
-    );
-
-    var sprite = new THREE.Sprite(spriteMaterial);
-    sprite.name = name;
-    sprite.visible = false;
-
-    sprite.scale.set(scale.x, scale.y, 1);
-    sprite.position.set(position.x, position.y, position.z);
-
-    return sprite;
-}
-
-// function for drawing rounded rectangles
-function roundRect(ctx, x, y, w, h, r)
-{
-    ctx.beginPath();
-    ctx.moveTo(x+r, y);
-    ctx.lineTo(x+w-r, y);
-    ctx.quadraticCurveTo(x+w, y, x+w, y+r);
-    ctx.lineTo(x+w, y+h-r);
-    ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
-    ctx.lineTo(x+r, y+h);
-    ctx.quadraticCurveTo(x, y+h, x, y+h-r);
-    ctx.lineTo(x, y+r);
-    ctx.quadraticCurveTo(x, y, x+r, y);
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
-}
-
 //Init this app from base
 function Website() {
     BaseApp.call(this);
@@ -80,6 +12,29 @@ Website.prototype = new BaseApp();
 
 Website.prototype.init = function(container) {
     BaseApp.prototype.init.call(this, container);
+
+    //Set up label data
+    var labelNames = ['Research', 'Projects', 'Portfolio', 'WebGL', 'TrajectASketch', 'Blog', 'Contact'];
+    var labelPositions = [
+        -100, 100, 0,
+        -80, 100, 0,
+        -60, 100, 0,
+        -40, 100, 0,
+        -20, 100, 0,
+        0, 100, 0,
+        20, 100, 0
+    ];
+
+    this.labelData = [];
+    var label;
+    for(var i= 0,pos=0; i<labelNames.length; ++i, pos+=3) {
+        label = {};
+        label.name = labelNames[i];
+        label.x = labelPositions[pos];
+        label.y = labelPositions[pos+1];
+        label.z = labelPositions[pos+2];
+        this.labelData.push(label);
+    }
 };
 
 Website.prototype.createScene = function() {
@@ -116,11 +71,11 @@ Website.prototype.createScene = function() {
     //Text labels
     var textPos = new THREE.Vector3(0, 150, 0);
     var textScale = new THREE.Vector3(350, 100, 1);
-    var welcome = createLabel(" Welcome ", textPos, textScale, null, 48, 1);
+    var welcome = spriteManager.create(" Welcome ", textPos, textScale, 48, 1, true);
     this.scene.add(welcome);
     var labelPos = new THREE.Vector3(100, 100, 0);
-    this.researchLabel = createLabel(" Research ", labelPos, textScale, null, 32, 1);
-    this.scene.add(this.researchLabel);
+    var researchLabel = spriteManager.create(" Research ", labelPos, textScale, 32, 1, false);
+    this.scene.add(researchLabel);
 };
 
 Website.prototype.update = function() {
@@ -141,7 +96,10 @@ Website.prototype.update = function() {
     if(this.hoverObjects.length != 0) {
         for(var i=0; i<this.hoverObjects.length; ++i ) {
             if(this.hoverObjects[i].object.name === 'display0') {
-                this.researchLabel.visible = true;
+                var research = spriteManager.getSprite(' Research ');
+                if(research) {
+                    research.visible = true;
+                }
             }
         }
     }
