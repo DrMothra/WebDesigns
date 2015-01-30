@@ -19,6 +19,7 @@ function BaseApp() {
     this.startTime = 0;
     this.elapsedTime = 0;
     this.clock = new THREE.Clock();
+    this.objectsPicked = false;
 }
 
 BaseApp.prototype.init = function(container) {
@@ -88,10 +89,13 @@ BaseApp.prototype.keydown = function(event) {
 
 BaseApp.prototype.mouseClicked = function(event) {
     //Update mouse state
+    this.pickedObjects.length = 0;
+
     if(event.type == 'mouseup') {
         this.mouse.endX = event.clientX;
         this.mouse.endY = event.clientY;
         this.mouse.down = false;
+        this.objectsPicked = false;
         return;
     }
     this.mouse.startX = event.clientX;
@@ -103,7 +107,6 @@ BaseApp.prototype.mouseClicked = function(event) {
 
     var raycaster = new THREE.Raycaster(this.camera.position, vector.sub(this.camera.position).normalize());
 
-    this.pickedObjects.length = 0;
     this.pickedObjects = raycaster.intersectObjects(this.scene.children, true);
 };
 

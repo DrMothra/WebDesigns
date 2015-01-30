@@ -47,7 +47,7 @@ Website.prototype.createScene = function() {
     loader.load( "scenes/webScene.js", callbackFinished);
 
     //Set up label data
-    var labelNames = ['Research', 'Projects', 'Portfolio', 'WebGL', 'TrajectASketch', 'Blog', 'Contact'];
+    this.labelNames = ['Research', 'Projects', 'Portfolio', 'WebGL', 'TrajectASketch', 'Blog', 'Contact'];
     var labelPositions = [
         -280, 30, 0,    //Research
         -180, 30, 0,    //Projects
@@ -68,28 +68,39 @@ Website.prototype.createScene = function() {
         100, 100, 1
     ];
 
-    this.labelData = [];
+    var labelData = [];
     var label;
-    for(var i= 0,pos=0; i<labelNames.length; ++i, pos+=3) {
+    for(var i= 0,pos=0; i<this.labelNames.length; ++i, pos+=3) {
         label = {};
-        label.name = labelNames[i];
+        label.name = this.labelNames[i];
         label.x = labelPositions[pos];
         label.y = labelPositions[pos+1];
         label.z = labelPositions[pos+2];
-        this.labelData.push(label);
+        labelData.push(label);
     }
     var labelPos = new THREE.Vector3();
     var labelScale = new THREE.Vector3();
     var spriteLabel;
-    for(var sprite= 0, scales=0; sprite<labelNames.length; ++sprite, scales+=3) {
-        labelPos.x = this.labelData[sprite].x;
-        labelPos.y = this.labelData[sprite].y;
-        labelPos.z = this.labelData[sprite].z;
+    for(var sprite= 0, scales=0; sprite<this.labelNames.length; ++sprite, scales+=3) {
+        labelPos.x = labelData[sprite].x;
+        labelPos.y = labelData[sprite].y;
+        labelPos.z = labelData[sprite].z;
         labelScale.x = labelScales[scales];
         labelScale.y = labelScales[scales+1];
         labelScale.z = labelScales[scales+2];
-        spriteLabel = spriteManager.create(labelNames[sprite], labelPos, labelScale, 32, 1, false);
+        spriteLabel = spriteManager.create(this.labelNames[sprite], labelPos, labelScale, 32, 1, false);
         this.scene.add(spriteLabel);
+    }
+};
+
+Website.prototype.clearLabels = function() {
+    //Make all labels invisible
+    var sprite;
+    for(var label=0; label<this.labelNames.length; ++label) {
+        sprite = this.scene.getObjectByName(this.labelNames[label]+'Label', true);
+        if(sprite) {
+            sprite.visible = false;
+        }
     }
 };
 
@@ -104,6 +115,7 @@ Website.prototype.update = function() {
 
     var raycaster = new THREE.Raycaster(this.camera.position, vector.sub(this.camera.position).normalize());
 
+    this.clearLabels();
     this.hoverObjects.length = 0;
     this.hoverObjects = raycaster.intersectObjects(this.scene.children, true);
 
@@ -113,9 +125,15 @@ Website.prototype.update = function() {
             var label = spriteManager.getSprite(this.hoverObjects[i].object.name);
             if(label) {
                 label.visible = true;
-                //DEBUG
-                console.log('Name =', this.hoverObjects[i].object.name);
             }
+        }
+    }
+
+    //Check selections
+    if(this.pickedObjects.length !=0 && !this.objectsPicked) {
+        this.objectsPicked = true;
+        for(var obj=0; obj<this.pickedObjects.length; ++obj) {
+            console.log('Picked =', this.pickedObjects[obj].object.name);
         }
     }
 };

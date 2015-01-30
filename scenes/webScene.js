@@ -34,7 +34,7 @@
 					"visible"  : true
 				},
 
-				"display0" : {
+				"Research" : {
 					"geometry" : "displayFront",
 					"material" : "research",
 					"position" : [ 0, 0, 0],
@@ -62,7 +62,7 @@
 							"visible"  : true
 				},
 
-				"display1" : {
+				"Projects" : {
 						"geometry" : "displayFront",
 							"material" : "projects",
 							"position" : [ 0, 0, 0],
@@ -89,7 +89,7 @@
 						"visible"  : true
 				},
 
-				"display2" : {
+				"Portfolio" : {
 					"geometry" : "displayFront",
 						"material" : "portfolio",
 						"position" : [ 0, 0, 0],
@@ -117,7 +117,7 @@
 						"visible"  : true
 				},
 
-				"display3" : {
+				"WebGL" : {
 					"geometry" : "displayFront",
 						"material" : "webGL",
 						"position" : [ 0, 0, 0],
@@ -144,7 +144,7 @@
 					"visible"  : true
 				},
 
-				"display4" : {
+				"TrajectASketch" : {
 					"geometry" : "displayFront",
 					"material" : "traject",
 					"position" : [ 0, 0, 0],
@@ -171,7 +171,7 @@
 					"visible"  : true
 				},
 
-				"display5" : {
+				"Blog" : {
 					"geometry" : "displayFront",
 					"material" : "blog",
 					"position" : [ 0, 0, 0],
@@ -199,7 +199,7 @@
 					"visible"  : true
 				},
 
-				"display6" : {
+				"Contact" : {
 					"geometry" : "displayFront",
 					"material" : "contact",
 					"position" : [ 0, 0, 0],
