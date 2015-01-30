@@ -7,9 +7,9 @@ var spriteManager = (function () {
     //Default values
     var defaultFontFace = "Arial";
     var defaultBorderThickness = 5;
-    var backgroundColour = 'rgba(255, 255, 255, 1.0)';
-    var borderColour = 'rgba(0, 0, 255, 1.0)';
-    var textColour = 'rgba(255, 0, 0, 1.0)';
+    var backgroundColour = 'rgba(55, 55, 55, 1.0)';
+    var borderColour = 'rgba(0, 0, 0, 1.0)';
+    var textColour = 'rgba(255, 255, 255, 1.0)';
     var defaultFontSize = 24;
     var defaultVisibility = false;
     var defaultRadius = 20;
@@ -24,7 +24,8 @@ var spriteManager = (function () {
             var context = canvas.getContext('2d');
             context.font = fontSize + "px " + defaultFontFace;
 
-            var metrics = context.measureText( name );
+            var spriteName = ' ' + name + ' ';
+            var metrics = context.measureText( spriteName );
             var textWidth = metrics.width;
 
             //Background
@@ -38,7 +39,7 @@ var spriteManager = (function () {
 
             //Text
             context.fillStyle = textColour;
-            context.fillText( name, defaultBorderThickness, fontSize + defaultBorderThickness);
+            context.fillText( spriteName, defaultBorderThickness, fontSize + defaultBorderThickness);
 
             // canvas contents will be used for a texture
             var texture = new THREE.Texture(canvas);
@@ -54,7 +55,7 @@ var spriteManager = (function () {
 
             var sprite = new THREE.Sprite(spriteMaterial);
             labels.push(sprite);
-            sprite.name = name;
+            sprite.name = name + 'Label';
             labelNames.push(name);
             sprite.visible = visible;
 

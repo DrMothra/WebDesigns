@@ -13,28 +13,6 @@ Website.prototype = new BaseApp();
 Website.prototype.init = function(container) {
     BaseApp.prototype.init.call(this, container);
 
-    //Set up label data
-    var labelNames = ['Research', 'Projects', 'Portfolio', 'WebGL', 'TrajectASketch', 'Blog', 'Contact'];
-    var labelPositions = [
-        -100, 100, 0,
-        -80, 100, 0,
-        -60, 100, 0,
-        -40, 100, 0,
-        -20, 100, 0,
-        0, 100, 0,
-        20, 100, 0
-    ];
-
-    this.labelData = [];
-    var label;
-    for(var i= 0,pos=0; i<labelNames.length; ++i, pos+=3) {
-        label = {};
-        label.name = labelNames[i];
-        label.x = labelPositions[pos];
-        label.y = labelPositions[pos+1];
-        label.z = labelPositions[pos+2];
-        this.labelData.push(label);
-    }
 };
 
 Website.prototype.createScene = function() {
@@ -68,14 +46,51 @@ Website.prototype.createScene = function() {
 
     loader.load( "scenes/webScene.js", callbackFinished);
 
-    //Text labels
-    var textPos = new THREE.Vector3(0, 150, 0);
-    var textScale = new THREE.Vector3(350, 100, 1);
-    var welcome = spriteManager.create(" Welcome ", textPos, textScale, 48, 1, true);
-    this.scene.add(welcome);
-    var labelPos = new THREE.Vector3(100, 100, 0);
-    var researchLabel = spriteManager.create(" Research ", labelPos, textScale, 32, 1, false);
-    this.scene.add(researchLabel);
+    //Set up label data
+    var labelNames = ['Research', 'Projects', 'Portfolio', 'WebGL', 'TrajectASketch', 'Blog', 'Contact'];
+    var labelPositions = [
+        -280, 30, 0,    //Research
+        -180, 30, 0,    //Projects
+        -80, 30, 0,     //Portfolio
+        25, 30, 0,      //WebGL
+        110, 30, 0,     //TrajectASketch
+        230, 30, 0,     //Blog
+        325, 30, 0      //Contact
+    ];
+
+    var labelScales = [
+        100, 100, 1,
+        100, 100, 1,
+        100, 100, 1,
+        100, 100, 1,
+        100, 100, 1,
+        100, 100, 1,
+        100, 100, 1
+    ];
+
+    this.labelData = [];
+    var label;
+    for(var i= 0,pos=0; i<labelNames.length; ++i, pos+=3) {
+        label = {};
+        label.name = labelNames[i];
+        label.x = labelPositions[pos];
+        label.y = labelPositions[pos+1];
+        label.z = labelPositions[pos+2];
+        this.labelData.push(label);
+    }
+    var labelPos = new THREE.Vector3();
+    var labelScale = new THREE.Vector3();
+    var spriteLabel;
+    for(var sprite= 0, scales=0; sprite<labelNames.length; ++sprite, scales+=3) {
+        labelPos.x = this.labelData[sprite].x;
+        labelPos.y = this.labelData[sprite].y;
+        labelPos.z = this.labelData[sprite].z;
+        labelScale.x = labelScales[scales];
+        labelScale.y = labelScales[scales+1];
+        labelScale.z = labelScales[scales+2];
+        spriteLabel = spriteManager.create(labelNames[sprite], labelPos, labelScale, 32, 1, false);
+        this.scene.add(spriteLabel);
+    }
 };
 
 Website.prototype.update = function() {
@@ -95,11 +110,11 @@ Website.prototype.update = function() {
     //Check hover actions
     if(this.hoverObjects.length != 0) {
         for(var i=0; i<this.hoverObjects.length; ++i ) {
-            if(this.hoverObjects[i].object.name === 'display0') {
-                var research = spriteManager.getSprite(' Research ');
-                if(research) {
-                    research.visible = true;
-                }
+            var label = spriteManager.getSprite(this.hoverObjects[i].object.name);
+            if(label) {
+                label.visible = true;
+                //DEBUG
+                console.log('Name =', this.hoverObjects[i].object.name);
             }
         }
     }
