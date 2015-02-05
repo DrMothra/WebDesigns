@@ -120,6 +120,7 @@ Website.prototype.update = function() {
     this.hoverObjects = raycaster.intersectObjects(this.scene.children, true);
 
     //Check hover actions
+
     if(this.hoverObjects.length != 0) {
         for(var i=0; i<this.hoverObjects.length; ++i ) {
             var label = spriteManager.getSprite(this.hoverObjects[i].object.name);
@@ -132,10 +133,28 @@ Website.prototype.update = function() {
     //Check selections
     if(this.pickedObjects.length !=0 && !this.objectsPicked) {
         this.objectsPicked = true;
-        for(var obj=0; obj<this.pickedObjects.length; ++obj) {
-            console.log('Picked =', this.pickedObjects[obj].object.name);
+        this.selectedObject = this.getSelectedObject();
+        if(this.selectedObject) {
+            console.log('Picked =', this.selectedObject);
+            //Animate object
+
         }
     }
+};
+
+Website.prototype.getSelectedObject = function() {
+    //See if list of picked objects has any scene objects in it
+    //Can ignore 'base' and anything with label in it
+    var name;
+    for(var obj=0; obj<this.pickedObjects.length; ++obj) {
+        name = this.pickedObjects[obj].object.name;
+        if(name.indexOf('base') >= 0 || name.indexOf('Label') >= 0) continue;
+        for(var i=0; i<this.labelNames.length; ++i) {
+            if(this.labelNames[i] === name) return name;
+        }
+    }
+
+    return null;
 };
 
 $(document).ready(function() {

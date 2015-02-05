@@ -15,6 +15,7 @@ function BaseApp() {
     this.root = null;
     this.mouse = { startX:0, startY:0, down:false, endX:0, endY:0};
     this.pickedObjects = [];
+    this.selectedObject = null;
     this.hoverObjects = [];
     this.startTime = 0;
     this.elapsedTime = 0;
