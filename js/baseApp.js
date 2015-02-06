@@ -20,6 +20,7 @@ function BaseApp() {
     this.startTime = 0;
     this.elapsedTime = 0;
     this.clock = new THREE.Clock();
+    this.clock.start();
     this.objectsPicked = false;
 }
 

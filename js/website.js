@@ -12,7 +12,11 @@ Website.prototype = new BaseApp();
 
 Website.prototype.init = function(container) {
     BaseApp.prototype.init.call(this, container);
-
+    //Objects to animate
+    this.animating = [];
+    this.rotInc = Math.PI*3;
+    this.posInc = 130;
+    this.animationTime = 3;
 };
 
 Website.prototype.createScene = function() {
@@ -120,7 +124,6 @@ Website.prototype.update = function() {
     this.hoverObjects = raycaster.intersectObjects(this.scene.children, true);
 
     //Check hover actions
-
     if(this.hoverObjects.length != 0) {
         for(var i=0; i<this.hoverObjects.length; ++i ) {
             var label = spriteManager.getSprite(this.hoverObjects[i].object.name);
@@ -137,7 +140,25 @@ Website.prototype.update = function() {
         if(this.selectedObject) {
             console.log('Picked =', this.selectedObject);
             //Animate object
+            var animObj = {};
+            animObj.group = this.selectedObject;
+            animObj.time = this.clock.getElapsedTime();
+            this.animating.push(animObj);
+        }
+    }
 
+    //Animations
+    if(this.animating.length != 0) {
+        var timeNow = this.clock.getElapsedTime();
+        var elapsed;
+        for(var obj=0; obj<this.animating.length; ++obj) {
+            elapsed = timeNow - this.animating[obj].time;
+            if(elapsed < this.animationTime) {
+                this.animating[obj].group.rotation.y = elapsed * this.rotInc;
+                this.animating[obj].group.position.y = elapsed * this.posInc;
+            } else {
+                this.animating.pop();
+            }
         }
     }
 };
@@ -150,7 +171,10 @@ Website.prototype.getSelectedObject = function() {
         name = this.pickedObjects[obj].object.name;
         if(name.indexOf('base') >= 0 || name.indexOf('Label') >= 0) continue;
         for(var i=0; i<this.labelNames.length; ++i) {
-            if(this.labelNames[i] === name) return name;
+            if(this.labelNames[i] === name) {
+                //Return mesh parent
+                return this.scene.getObjectByName(name, true).parent;
+            }
         }
     }
 
