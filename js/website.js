@@ -110,6 +110,8 @@ Website.prototype.clearLabels = function() {
 
 Website.prototype.update = function() {
     //Perform any updates
+    var elapsed = this.clock.getDelta();
+    var i;
     BaseApp.prototype.update.call(this);
 
     //Check for mouse over
@@ -125,7 +127,7 @@ Website.prototype.update = function() {
 
     //Check hover actions
     if(this.hoverObjects.length != 0) {
-        for(var i=0; i<this.hoverObjects.length; ++i ) {
+        for(i=0; i<this.hoverObjects.length; ++i ) {
             var label = spriteManager.getSprite(this.hoverObjects[i].object.name);
             if(label) {
                 label.visible = true;
@@ -137,27 +139,37 @@ Website.prototype.update = function() {
     if(this.pickedObjects.length !=0 && !this.objectsPicked) {
         this.objectsPicked = true;
         this.selectedObject = this.getSelectedObject();
-        if(this.selectedObject) {
-            console.log('Picked =', this.selectedObject);
-            //Animate object
-            var animObj = {};
-            animObj.group = this.selectedObject;
-            animObj.time = this.clock.getElapsedTime();
-            this.animating.push(animObj);
+        if(this.selectedObject >= 0) {
+            //Animate all objects
+            var select;
+            var labels = this.labelNames.length;
+            for(i=0; i<labels; ++i) {
+                select = (this.selectedObject + i) % labels;
+                var animObj = {};
+                animObj.group = this.scene.getObjectByName(this.labelNames[select], true).parent;
+                animObj.startTime = this.clock.getElapsedTime() + (i*0.5);
+                animObj.endTime = animObj.startTime + this.animationTime;
+                this.animating.push(animObj);
+            }
         }
     }
 
     //Animations
     if(this.animating.length != 0) {
         var timeNow = this.clock.getElapsedTime();
-        var elapsed;
+        var animation;
         for(var obj=0; obj<this.animating.length; ++obj) {
-            elapsed = timeNow - this.animating[obj].time;
-            if(elapsed < this.animationTime) {
-                this.animating[obj].group.rotation.y = elapsed * this.rotInc;
-                this.animating[obj].group.position.y = elapsed * this.posInc;
-            } else {
-                this.animating.pop();
+            animation = this.animating[obj];
+            if(timeNow >= animation.startTime) {
+                if(timeNow < animation.endTime) {
+                    this.animating[obj].group.rotation.y += elapsed * this.rotInc;
+                    this.animating[obj].group.position.y += elapsed * this.posInc;
+                } else {
+                    this.animating.splice(0, 1);
+                    if(this.animating.length === 0) {
+                        this.nextPage(this.labelNames[this.selectedObject]);
+                    }
+                }
             }
         }
     }
@@ -172,13 +184,18 @@ Website.prototype.getSelectedObject = function() {
         if(name.indexOf('base') >= 0 || name.indexOf('Label') >= 0) continue;
         for(var i=0; i<this.labelNames.length; ++i) {
             if(this.labelNames[i] === name) {
-                //Return mesh parent
-                return this.scene.getObjectByName(name, true).parent;
+                //Return object index
+                return i;
             }
         }
     }
 
-    return null;
+    return -1;
+};
+
+Website.prototype.nextPage = function(pageName) {
+    //Load next page or scene
+    window.open(pageName + '.html', '_self');
 };
 
 $(document).ready(function() {
