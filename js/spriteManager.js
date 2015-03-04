@@ -65,6 +65,11 @@ var spriteManager = (function () {
             return sprite;
         },
 
+        setBorderProperties: function(thickNess, colour) {
+            defaultBorderThickness = thickNess != undefined ? thickNess : defaultBorderThickness;
+            borderColour = colour != undefined ? 'rgba('+colour.r+','+colour.g+','+colour.b+','+colour.a+')' : borderColour;
+        },
+
         getSprite: function(name) {
             for(var i=0; i<labelNames.length; ++i) {
                 if(labelNames[i] === name) {

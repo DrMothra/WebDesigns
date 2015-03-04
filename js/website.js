@@ -23,6 +23,14 @@ Website.prototype.createScene = function() {
     //Create scene
     BaseApp.prototype.createScene.call(this);
 
+    //Create ground plane
+    var groundGeom = new THREE.PlaneGeometry(1024, 1024);
+    var groundMat = new THREE.MeshPhongMaterial( {color: 0x00ff00});
+    var ground = new THREE.Mesh(groundGeom, groundMat);
+    ground.rotation.x = -Math.PI/2;
+    ground.position.y = -100;
+    this.scene.add(ground);
+
     var _this = this;
 
     THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
@@ -95,6 +103,14 @@ Website.prototype.createScene = function() {
         spriteLabel = spriteManager.create(this.labelNames[sprite], labelPos, labelScale, 32, 1, false);
         this.scene.add(spriteLabel);
     }
+
+    //Welcome text
+    var welcomePos = new THREE.Vector3(0, 150, 0);
+    var welcomeScale = new THREE.Vector3(150, 150, 1);
+    var textColour = { r: 255, g:255, b: 0, a: 1.0};
+    spriteManager.setBorderProperties(10, textColour);
+    var mainText = spriteManager.create('Welcome', welcomePos, welcomeScale, 36, 1, true);
+    this.scene.add(mainText);
 };
 
 Website.prototype.clearLabels = function() {
