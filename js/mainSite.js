@@ -44,13 +44,17 @@ Website.prototype.createScene = function() {
     }
 
     //Pumpkin object
-
-    var sphereGeom = new THREE.SphereGeometry(10, 16, 16);
-    var sphereMat = new THREE.MeshPhongMaterial( {color: 0x0000ff});
-    var sphere = new THREE.Mesh(sphereGeom, sphereMat);
-    sphere.position.y = -100;
-    sphere.position.z = 100;
-    this.scene.add(sphere);
+    this.square = 230;
+    this.sphereRadius = 10;
+    var sphereGeom = new THREE.SphereGeometry(this.sphereRadius, 16, 16);
+    var tex = THREE.ImageUtils.loadTexture( "textures/pumpkinSmall.jpg" );
+    var sphereMat = new THREE.MeshPhongMaterial( {map: tex});
+    this.sphere = new THREE.Mesh(sphereGeom, sphereMat);
+    this.sphere.position.y = -100;
+    this.sphere.position.z = 100;
+    this.sphere.rotation.y = Math.PI;
+    this.sphere.rotation.z = Math.PI/8;
+    this.scene.add(this.sphere);
 };
 
 Website.prototype.update = function() {
@@ -66,6 +70,8 @@ Website.prototype.update = function() {
             this.boxes[cube + (row*this.cubesPerRow)].position.y = this.startY + (this.amplitude * Math.sin(this.elapsedTime + (cube * this.timeInc)));
         }
     }
+    //Position sphere
+    this.sphere.position.set(this.boxes[this.square].position.x, this.boxes[this.square].position.y+(BOX_SIZE), this.boxes[this.square].position.z);
 };
 
 $(document).ready(function() {

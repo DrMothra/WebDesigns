@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+
+    <title>Dr Tony Glover &ndash; Portfolio</title>
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure.css">
+    <link rel="stylesheet" href="css/mainStyles.css?v=1.0">
+
+</head>
+<body>
+
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu pure-menu-open">
+            <a class="pure-menu-heading" href="index.html">Home</a>
+            <ul>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li class="pure-menu-selected">
+                    <a href="#">Portfolio</a></li>
+                <li><a href="webgl.html">WebGL</a></li>
+                <li><a href="traject.html">TrajectASketch</a></li>
+                <li><a href="http://www.cs.nott.ac.uk/~atg/blog">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="header" id="myHeader">
+            <h1>Portfolio</h1>
+            <h2>All these things that I have done</h2>
+        </div>
+        <div class="content">
+            <h2 class="content-subhead">Portfolio</h2>
+            <p>
+                I've worked with a whole range of technologies encompassing fields such as 3D computer graphics, virtual reality, virtual learning environments, simulation,
+                visualisation, user interface design and many more. Here is a selection below.
+            </p>
+            <ul class="portfolio">
+                <li>
+                    3D Computer Graphics
+                </li>
+                <div class="pure-g">
+                    <div class="pure-u-1-5">
+                        <img class="pure-img-responsive gallery" src="images/skull.png">
+                    </div>
+                    <div class="pure-u-4-5">
+                        <p class="content-list">
+                            The vast majority of the projects that I have worked on have had some element of 3D graphics involvement. I've pretty much done the full gamut of graphical
+                            applications from virtual reality (I used head-mounted displays before they were popular!), collaborative virtual environments, surgical simulation, medical
+                            imaging and volume rendering to collaborative games and am now exploring 3D on the browser. Some of the finer details are outlined here.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pure-g sub-portfolio">
+                    <div class="pure-u-1-3">
+                        <li>
+                            Virtual Reality
+                        </li>
+                        <p>
+                            <a href="vr.html">
+                            <img class="pure-img-responsive gallerySquareMedium" src="images/Glu4D-320.jpg">
+                            </a>
+                        </p>
+                        <p class="description">
+                            From HMD's to CVE's
+                        </p>
+
+                    </div>
+                    <div class="pure-u-1-3">
+                        <li>
+                            Simulation
+                        </li>
+                        <p>
+                            <a href="simulation.html">
+                            <img class="pure-img-responsive gallerySquareMedium" src="images/surgery1.jpg">
+                            </a>
+                        </p>
+                        <p class="description">
+                            Dissecting brains!
+                        </p>
+                    </div>
+                    <div class="pure-u-1-3">
+                        <li>
+                            Visualisation
+                        </li>
+                        <p>
+                            <a href="visualisation.html">
+                            <img class="pure-img-responsive gallerySquareMedium" src="images/vis1.jpg">
+                            </a>
+                        </p>
+                        <p class="description">
+                            Seeing inside people's heads
+                        </p>
+                    </div>
+                </div>
+
+                <div class="pure-g sub-portfolio">
+                    <div class="pure-u-1-3">
+                        <li>
+                            Gaming
+                        </li>
+                        <p>
+                            <a href="gaming.html">
+                            <img class="pure-img-responsive gallerySquareMedium" src="images/flypad1.jpg">
+                            </a>
+                        </p>
+                        <p class="description">
+                            Crazy gaming
+                        </p>
+
+                    </div>
+                    <div class="pure-u-1-3">
+                        <li>
+                            Tools
+                        </li>
+                        <p>
+                            <a href="tools.html">
+                            <img class="pure-img-responsive gallerySquareMedium" src="images/fullUI2.jpg">
+                            </a>
+                        </p>
+                        <p class="description">
+                            A tool for everything
+                        </p>
+                    </div>
+                    <div class="pure-u-1-3">
+                        <li>
+                            Web
+                        </li>
+                        <p>
+                            <a href="webgl.html">
+                            <img class="pure-img-responsive gallerySquareMedium" src="images/carvisualizer.jpg">
+                            </a>
+                        </p>
+                        <p class="description">
+                            3D in the browser
+                        </p>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
