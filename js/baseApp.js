@@ -10,10 +10,10 @@ function BaseApp() {
     this.controls = null;
     this.stats = null;
     this.container = null;
-    this.projector = null;
+    this.raycaster = null;
     this.objectList = [];
     this.root = null;
-    this.mouse = { startX:0, startY:0, down:false, endX:0, endY:0};
+    this.mouse = { startX:0, startY:0};
     this.pickedObjects = [];
     this.selectedObject = null;
     this.hoverObjects = [];
@@ -31,15 +31,15 @@ BaseApp.prototype.init = function(container) {
     console.log("BaseApp renderer =", this.renderer);
     this.createCamera();
     this.createControls();
-    this.projector = new THREE.Projector();
-    //this.stats = initStats();
-    this.statsShowing = false;
+    this.raycaster = new THREE.Raycaster();
+    this.stats = initStats();
+    this.statsShowing = true;
 
 };
 
 BaseApp.prototype.createRenderer = function() {
     this.renderer = new THREE.WebGLRenderer( {antialias : true});
-    this.renderer.setClearColor(0x666666, 1.0);
+    this.renderer.setClearColor(0xb7b7b7, 1.0);
     this.renderer.shadowMapEnabled = true;
     var isMSIE = /*@cc_on!@*/0;
 
@@ -100,16 +100,13 @@ BaseApp.prototype.mouseClicked = function(event) {
         this.objectsPicked = false;
         return;
     }
-    this.mouse.startX = event.clientX;
-    this.mouse.startY = event.clientY;
+    this.mouse.startX = (event.clientX / window.innerWidth) * 2 - 1;
+    this.mouse.startY = (event.clientY / window.innerHeight) * 2 + 1;
     this.mouse.down = true;
 
-    var vector = new THREE.Vector3(( event.clientX / window.innerWidth ) * 2 - 1, -( event.clientY / window.innerHeight ) * 2 + 1, 0.5);
-    this.projector.unprojectVector(vector, this.camera);
+    this.raycaster.setFromCamera(this.mouse, this.camera);
 
-    var raycaster = new THREE.Raycaster(this.camera.position, vector.sub(this.camera.position).normalize());
-
-    this.pickedObjects = raycaster.intersectObjects(this.scene.children, true);
+    this.pickedObjects = this.raycaster.intersectObjects(this.scene.children, true);
 };
 
 BaseApp.prototype.mouseMoved = function(event) {
