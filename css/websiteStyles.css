@@ -133,15 +133,19 @@ The content `<div>` is where all your content goes.
 #title {
     position: absolute;
     top: 15%;
-    right: 10%;
+    left: 15%;
     text-align: center;
 }
 #title h1 {
     color: #e28900;
     font-size: 2.5em;
 }
+#title p {
+    font-weight: 300;
+    color: #525252;
+}
 #titleImage img {
-    width: 50%;
+    width: 120%;
 }
 .section-subhead {
     width: 30%;

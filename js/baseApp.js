@@ -62,12 +62,15 @@ BaseApp.prototype.createRenderer = function() {
         _this.mouseMoved(event);
     }, false);
 
+    window.addEventListener('keydown', function(event) {
+        _this.keydown(event);
+    }, false);
+
     window.addEventListener('resize', function(event) {
         _this.windowResize(event);
     }, false);
 };
 
-/*
 BaseApp.prototype.keydown = function(event) {
     //Key press functionality
     switch(event.keyCode) {
@@ -87,7 +90,6 @@ BaseApp.prototype.keydown = function(event) {
             console.log('Look =', this.controls.getLookAt());
     }
 };
-*/
 
 BaseApp.prototype.mouseClicked = function(event) {
     //Update mouse state
@@ -154,7 +156,7 @@ BaseApp.prototype.createScene = function() {
 BaseApp.prototype.createCamera = function() {
 
     this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 5000 );
-    this.camera.position.set(0, 250, 600 );
+    this.camera.position.set(-520, 10, 350 );
 
     console.log('dom =', this.renderer.domElement);
 };
@@ -173,7 +175,7 @@ BaseApp.prototype.createControls = function() {
 
     this.controls.keys = [ 65, 83, 68 ];
 
-    var lookAt = new THREE.Vector3(0, 50, 0);
+    var lookAt = new THREE.Vector3(-80, 3, -106);
     this.controls.setLookAt(lookAt);
 };
 
