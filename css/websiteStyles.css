@@ -143,6 +143,11 @@ The content `<div>` is where all your content goes.
 #title p {
     font-weight: 300;
     color: #525252;
+    text-align: justify;
+}
+#title img {
+    width: 50%;
+    border-radius: 10px;
 }
 #titleImage img {
     width: 120%;

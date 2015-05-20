@@ -21,13 +21,11 @@ Website.prototype.createScene = function() {
 
     //Create ground plane consisting of boxes
     this.boxes = [];
-    this.amplitude = 20;
     this.animationTime = 0;
     var startX = -550, startZ = 0;
     this.startY = -100;
     this.cubesPerRow = 50;
     this.numRows = 10;
-    this.timeInc = Math.PI/50;
     var xGap = BOX_SIZE + 2, zGap = xGap;
     var boxGeom, boxMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff}), boxMesh;
     for(var row = 0; row<this.numRows; ++row) {
@@ -43,6 +41,14 @@ Website.prototype.createScene = function() {
         }
     }
 
+    //Cube animation
+    this.amplitude = 40;
+    this.waveCycle = 20;
+    this.waveDelta = (2 * Math.PI)/this.waveCycle;
+    this.startCube = 0;
+    this.endCube = this.startCube + this.cubesPerRow;
+    this.currentCube = this.startCube;
+
     //Research object
     var _this = this;
     this.square = 230;
@@ -52,8 +58,8 @@ Website.prototype.createScene = function() {
     this.model = new THREE.Mesh(plane, planeMat);
     this.model.rotation.y = -Math.PI/2;
     this.scene.add( this.model);
-    //Timing
-    this.currentCube = 1;
+    this.animating = true;
+    this.waitTime = 5;
 };
 
 Website.prototype.update = function() {
@@ -64,16 +70,33 @@ Website.prototype.update = function() {
     this.elapsedTime += delta;
 
     //Use sine wave to animate boxes
-    for(var cube=this.currentCube, i=0; cube>=0; --cube, ++i) {
-        this.boxes[cube].position.y = this.startY + (this.amplitude * Math.sin(this.timeInc * cube));
+
+    if(this.elapsedTime >= this.waitTime || this.animating) {
+        this.animating = true;
+        var nextCube;
+        for(var i=0; i<=this.waveCycle; ++i) {
+            nextCube = this.currentCube-i;
+            if(nextCube < this.startCube || nextCube >= this.endCube) continue;
+            for(var row=0; row<this.numRows; ++row) {
+                this.boxes[nextCube+(row*this.cubesPerRow)].position.y = this.startY + (this.amplitude * Math.sin(this.waveDelta * i));
+            }
+        }
+        //Position model
+        this.model.position.set(this.boxes[this.square].position.x, this.boxes[this.square].position.y+30, this.boxes[this.square].position.z);
+
+        if(++this.currentCube >= (this.endCube+this.waveCycle)) {
+            this.currentCube = this.startCube;
+            this.animating = false;
+        }
+        this.elapsedTime = 0;
     }
-    if(++this.currentCube >= 50) this.currentCube = 1;
-    //Position model
-    //this.model.position.set(this.boxes[this.square].position.x, this.boxes[this.square].position.y+30, this.boxes[this.square].position.z);
+
+
 };
 
 $(document).ready(function() {
     //Initialise app
+    skel.init();
     var container = document.getElementById("WebGL-output");
     var app = new Website();
     app.init(container);
