@@ -7,8 +7,16 @@
 
     <title>Dr Tony Glover &ndash; Projects</title>
 
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure.css">
-    <link rel="stylesheet" href="css/mainStyles.css?v=1.0">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/three71.js"></script>
+    <script type="text/javascript" src="js/stats.js"></script>
+    <script type="text/javascript" src="js/TrackballControls.js"></script>
+    <script type="text/javascript" src="js/baseApp.js?v=0.2"></script>
+    <script type="text/javascript" src="js/skel.min.js?v=0.1"></script>
+    <script type="text/javascript" src="js/projects.js?v=0.1"></script>
+
+    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/websiteStyles.css?v=0.1">
 
 </head>
 <body>
@@ -28,132 +36,43 @@
                 <li class="pure-menu-selected">
                     <a href="#">Projects</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="webgl.html">WebGL</a></li>
-                <li><a href="traject.html">TrajectASketch</a></li>
                 <li><a href="http://www.cs.nott.ac.uk/~atg/blog">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </div>
 
-    <div id="main">
-        <div class="header" id="myHeader">
-            <h1>Projects</h1>
-            <h2>How I make a living</h2>
-        </div>
+    <div id="WebGL-output">
 
-        <div class="content">
-            <h2 class="content-subhead">Projects</h2>
+    </div>
+
+</div>
+
+<div class="header">
+    <h1>Projects</h1>
+    <h2>How I make a living</h2>
+</div>
+
+<div id="gallery">
+    <div class="row">
+        <div class="4u">
+
+        </div>
+        <div class="4u">
+            <h1>Research</h1>
             <p>
-                I've been fortunate enough to work on a diverse range of research projects. Some of the them are outlined below.
+                My main research interests centre around three-dimensional computer graphics, in the form of visualisations, simulation, virtual environments and graphical tools.
+                Currently I am developing a number of applications to visualise and manipulate data over the web. These make use of emerging technologies that allow for rendering of complex graphical data
+                (both 2D and 3D) and realtime interaction in the browser.
             </p>
-            <ul class="projects">
-                <li>
-                    MAGELLAN
-                </li>
-                <div class="pure-g">
-                    <div class="pure-u-1-5">
-                        <img class="pure-img-responsive gallery4 fix-centre" src="images/showcaseLogo.png">
-                    </div>
-                    <div class="pure-u-4-5">
-                        <p class="content-list">
-                            <a href="http://www.magellanproject.eu/">MAGELLAN</a> (a Multimodal Authoring and Gaming Environment for Location-based coLlaborative AdveNtures) is concerned with developing the next
-                            generation of authoring tools for creating and distributing location-based experiences. The tool will cater for a diverse range of user experience
-                            in allowing participants to create engaging applications.
-                        </p>
-                    </div>
-                </div>
-                <li>
-                    CHESS
-                </li>
-                <div class="pure-g">
-                    <div class="pure-u-1-5">
-                        <img class="pure-img-responsive gallery4 fix-centre" src="images/logoChess.jpg">
-                    </div>
-                    <div class="pure-u-4-5">
-                        <p class="content-list">
-                            <a href="http://www.chessexperience.eu/v2/">CHESS</a> (Cultural Heritage Experiences through Socio-personal Interactions and Storytelling) aimed to enhance interactive experiences at visitor attractions
-                            such as museums and galleries, etc. by deploying a range of technologies to augment the interactions.
-                        </p>
-                    </div>
-                </div>
-                <li>
-                    Glu4D
-                </li>
-                <div class="pure-g">
-                    <div class="pure-u-1-5">
-                        <img class="pure-img-responsive gallery4 fix-centre" src="images/Glu4D-320.jpg">
-                    </div>
-                    <div class="pure-u-4-5">
-                        <p class="content-list">
-                            The Glu4D system is an example of mixed reality architecture whereby elements of the virtual (a virtual environment) are combined with elements of the
-                            real physical world, in this case real-time video feeds from other participants. The system allows multiple participants to communicate and share resources
-                            whilst potentially being located by considerable distances.
-                        </p>
-                    </div>
-                </div>
-                <li>
-                    Cospatial
-                </li>
-                <div class="pure-g">
-                    <div class="pure-u-1-5">
-                        <img class="pure-img-responsive gallery4 fix-centre" src="images/cospatial.jpg">
-                    </div>
-                    <div class="pure-u-4-5">
-                        <p class="content-list">
-                            <a href="http://cospatial.fbk.eu/">Cospatial</a> (Communication and Social Participation : Collaborative Technologies for Interaction and Learning) utilised collaborative virtual environments
-                            to attempt to improve the social skills of young adults on the Autistic Spectrum Disorder.
-                        </p>
-                    </div>
-                </div>
-                <li>
-                    Flypad
-                </li>
-                <div class="pure-g">
-                    <div class="pure-u-1-5">
-                        <img class="pure-img-responsive gallery4 fix-centre" src="images/flypad1.jpg">
-                    </div>
-                    <div class="pure-u-4-5">
-                        <p class="content-list">
-                            Flypad was a multiplayer collaborative mixed reality game situated in a public gallery. Visitors to the attractions
-                            were able to participate in the physics-based game where physical exertions were rewarded via swapping virtual limbs with other
-                            players!
-                        </p>
-                    </div>
-                </div>
-                <li>
-                    Simulation
-                </li>
-                <div class="pure-g">
-                    <div class="pure-u-1-5">
-                        <img class="pure-img-responsive gallery4 fix-centre" src="images/surgery1.jpg">
-                    </div>
-                    <div class="pure-u-4-5">
-                        <p class="content-list">
-                            Virtual surgery allows practitioners to simulate complex procedures prior to performing the operations for real. The simulator
-                            allowed real-time deformation and cutting of brain tissue all with appropriate haptic feedback.
-                        </p>
-                    </div>
-                </div>
-                <li>
-                    Medical Imaging
-                </li>
-                <div class="pure-g">
-                    <div class="pure-u-1-5">
-                        <img class="pure-img-responsive gallery4 fix-centre" src="images/vis1.jpg">
-                    </div>
-                    <div class="pure-u-4-5">
-                        <p class="content-list">
-                            As a consequence of developing the surgery simulator outlined above there was a need to design software tools to enable the anatomical
-                            structures of the brain to be visualised and modelled. Three-dimensional models of the brain were subsequently produced by the software for
-                            use in the simulator to enable patient-specific operations to be performed.
-                        </p>
-                    </div>
-                </div>
-            </ul>
+        </div>
+        <div class="4u">
+
         </div>
     </div>
 </div>
+
+<script src="js/ui.js"></script>
 
 </body>
 </html>

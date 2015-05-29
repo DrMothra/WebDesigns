@@ -380,3 +380,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     text-align: left;
     margin: 5px;
 }
+#gallery {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+}
