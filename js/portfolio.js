@@ -1,5 +1,5 @@
 /**
- * Created by atg on 18/05/2015.
+ * Created by atg on 01/06/2015.
  */
 
 var BOX_SIZE = 20;
@@ -20,8 +20,8 @@ Website.prototype.createScene = function() {
     BaseApp.prototype.createScene.call(this);
 
     //Alter camera
-    this.camera.position.set(1500, 330, 1055 );
-    var lookAt = new THREE.Vector3(-90, 310, 20);
+    this.camera.position.set(1020, 230, 790 );
+    var lookAt = new THREE.Vector3(125, 170, -890);
     this.controls.setLookAt(lookAt);
     //Create ground plane consisting of boxes
     this.boxes = [];
@@ -57,13 +57,14 @@ Website.prototype.createScene = function() {
     //Research object
     var _this = this;
     this.square = 240;
-    var tex = THREE.ImageUtils.loadTexture( "textures/projects.jpg" );
+    var tex = THREE.ImageUtils.loadTexture( "textures/portfolio.jpg" );
     var plane = new THREE.PlaneGeometry(50, 50, 8, 8);
     var planeMat = new THREE.MeshLambertMaterial( {map: tex} );
     this.model = new THREE.Mesh(plane, planeMat);
     this.scene.add( this.model);
     this.animating = true;
     this.waitTime = 5;
+    this.offset = 0;
 };
 
 Website.prototype.update = function() {
@@ -76,7 +77,7 @@ Website.prototype.update = function() {
     //Use sine wave to animate boxes
     for(var row=0; row<this.numRows; ++row) {
         for(var cube = 0; cube<this.cubesPerRow; ++cube) {
-            this.boxes[cube + (row*this.cubesPerRow)].position.y = this.startY + (this.amplitude * Math.sin(this.elapsedTime + (cube * this.timeInc)));
+            this.boxes[cube + (row*this.cubesPerRow)].position.y = this.startY + (this.amplitude * Math.sin(this.elapsedTime + (cube * this.timeInc) + (row * 2 * this.timeInc)));
         }
     }
     //Position model
@@ -95,3 +96,4 @@ $(document).ready(function() {
 
     app.run();
 });
+

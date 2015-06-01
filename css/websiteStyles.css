@@ -148,6 +148,7 @@ The content `<div>` is where all your content goes.
 #title img {
     width: 50%;
     border-radius: 10px;
+    margin-top: 2%;
 }
 #titleImage img {
     width: 120%;
@@ -382,6 +383,29 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 }
 #gallery {
     position: absolute;
-    top: 10%;
-    left: 15%;
+    top: 20%;
+    left: 30%;
+    text-align: center;
+}
+#gallery img {
+    width: 50%;
+    border-radius: 5px;
+}
+#gallery p {
+    background-color: #c78939;
+    color: #191818;
+    border-radius: 5px;
+    width: 65%;
+    margin: 0 auto;
+}
+#gallery .row {
+    margin-bottom: 2%;
+}
+#description {
+    position: absolute;
+    top: 7%;
+    left: 10%;
+}
+#description p {
+    text-align: justify;
 }
