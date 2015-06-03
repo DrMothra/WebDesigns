@@ -92,6 +92,7 @@ $(document).ready(function() {
     app.createScene();
 
     //GUI callbacks
-
+    $('.lightGlu').colorbox( {rel:'lightGlu', transition:"none", width:"75%", height:"75%"} );
+    $('.lightMedical').colorbox( {rel:'lightMedical', transition:"none", width:"75%", height:"75%"} );
     app.run();
 });
