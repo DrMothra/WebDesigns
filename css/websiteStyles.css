@@ -417,3 +417,15 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 #gallery .row {
     margin-bottom: 2%;
 }
+#content h2 {
+    font-size: 1.2vw;
+}
+#content p {
+    text-align: justify;
+    font-size: 0.8vw;
+}
+#content img {
+    width: 30%;
+    float: left;
+    padding-right: 5px;
+}
