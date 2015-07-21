@@ -11,41 +11,44 @@
     <script type="text/javascript" src="js/three71.js"></script>
     <script type="text/javascript" src="js/stats.js"></script>
     <script type="text/javascript" src="js/TrackballControls.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/baseApp.js?v=0.2"></script>
     <script type="text/javascript" src="js/mainSite.js?v=0.1"></script>
 
-    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css?v=0.1">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css?v=0.1">
     <link rel="stylesheet" href="css/websiteStyles.css?v=0.1">
 
 </head>
 <body>
 
-<div id="layout">
-    <!-- Menu toggle -->
-    <a href="#menu" id="menuLink" class="menu-link"></a>
+<div class="container-fluid">
 
-    <div id="menu">
-        <div class="pure-menu pure-menu-open">
-            <a class="pure-menu-heading" href="index.html">Home</a>
-            <ul>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="http://www.cs.nott.ac.uk/~atg/blog">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <div class="row">
+        <div class="col-md-1">
+            <div id="menu">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="http://www.cs.nott.ac.uk/~atg/blog">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
+        <div class="col-md-11">
+            <div id="WebGL-output">
 
-    <div id="WebGL-output">
-
+            </div>
+        </div>
     </div>
 
 </div>
 
 <div class="header">
     <h1>Tony Glover</h1>
-    <h2>Senior Research Fellow, Software Developer and Consultant</h2>
+    <h3 class="text-muted"> Senior Research Fellow, Software Developer and Consultant</h3>
 </div>
 
 <div id="title">
@@ -56,13 +59,8 @@
     <p>
         His research is concerned with web visualisations, particularly utilising 3D graphics.
     </p>
-    <div id="titleImage">
-        <img src="images/newOverview.png">
-    </div>
+    <img src="images/newOverview.png">
 </div>
-
-<script src="js/ui.js"></script>
-
 
 </body>
 </html>

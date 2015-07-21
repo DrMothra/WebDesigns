@@ -11,96 +11,85 @@
     <script type="text/javascript" src="js/three71.js"></script>
     <script type="text/javascript" src="js/stats.js"></script>
     <script type="text/javascript" src="js/TrackballControls.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/baseApp.js?v=0.2"></script>
-    <script type="text/javascript" src="js/skel.min.js?v=0.1"></script>
     <script type="text/javascript" src="js/portfolio.js?v=0.1"></script>
 
-    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css?v=0.1">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css?v=0.1">
     <link rel="stylesheet" href="css/websiteStyles.css?v=0.1">
 
 </head>
 <body>
 
-<div id="layout">
-    <!-- Menu toggle -->
-    <a href="#menu" id="menuLink" class="menu-link">
-        <!-- Hamburger icon -->
-        <span></span>
-    </a>
+<div class="container-fluid">
 
-    <div id="menu">
-        <div class="pure-menu pure-menu-open">
-            <a class="pure-menu-heading" href="index.html">Home</a>
-            <ul>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li class="pure-menu-selected">
-                    <a href="#">Portfolio</a></li>
-                <li><a href="http://www.cs.nott.ac.uk/~atg/blog">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <div class="row">
+        <div class="col-md-1">
+            <div id="menu">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li class="active"><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="http://www.cs.nott.ac.uk/~atg/blog">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
+        <div class="col-md-11">
+            <div id="WebGL-output">
 
-    <div id="WebGL-output">
-
+            </div>
+        </div>
     </div>
 
 </div>
 
 <div class="header">
     <h1>Portfolio</h1>
-    <h2>All these things that I have done</h2>
+    <h3 class="text-muted">All these things that I have done</h3>
 </div>
 
-<div id="title">
+<div id="portfolioTitle">
     <h1>Portfolio</h1>
-    <div class="row">
-        <div class="3u">
-            &nbsp;
-        </div>
-        <div class="6u">
-            <p>
-                I have developed a number of interactive web applications that allow differing types of data to be visualised and manipulated.
-                The data being visualised may be broadly classified into two categories - live, dynamically changing data and more static, fixed sources.
-            </p>
-        </div>
-        <div class="3u">
-            &nbsp;
-        </div>
-    </div>
-    <div id="content">
+    <p>
+        I have developed a number of interactive web applications that allow differing types of data to be visualised and manipulated.
+        The data being visualised may be broadly classified into two categories - live, dynamically changing data and more static, fixed sources.
+    </p>
+
+    <div id="content" class="container-fluid">
         <div class="row">
-            <div class="3u">
+            <div class="col-md-3">
                 &nbsp;
             </div>
-            <div class="6u">
+            <div class="col-md-6">
                 <h2>Dynamic Data Visualisation</h2>
             </div>
-            <div class="3u">
+            <div class="col-md-3">
                 &nbsp;
             </div>
         </div>
         <div class="row">
-            <div class="3u">
+            <div class="col-md-3">
                 <img src="images/mayhemIcon.jpg">
                 <p>
                     Mayhem - The visualisation depicts the brain activity of participants whilst they receive external stimulus in the form of watching horror films.
                 </p>
             </div>
-            <div class="3u">
+            <div class="col-md-3">
                 <img src="images/neurosisIcon.jpg">
                 <p>
                     Neurosis - The first brain controlled roller coaster ride. Here the brain activity of the participants is visualised whilst they enjoy the ride.
                 </p>
             </div>
-            <div class="3u">
+            <div class="col-md-3">
                 <img src="images/hastingsIcon.jpg">
                 <p>
                     Storm in a Teacup - Actual wave data gathered off Hastings pier is used to derive a number of representations.
                 </p>
             </div>
-            <div class="3u">
+            <div class="col-md-3">
                 <img src="images/scopeIcon.jpg">
                 <p>
                     Oscilloscope - A data measuring tool used to validate the various data sources in use.
@@ -110,36 +99,36 @@
     </div>
     <div id="contentTools">
         <div class="row">
-            <div class="3u">
+            <div class="col-md-3">
                 &nbsp;
             </div>
-            <div class="6u">
+            <div class="col-md-6">
                 <h2>Data Visualisation Tools</h2>
             </div>
-            <div class="3u">
+            <div class="col-md-3">
                 &nbsp;
             </div>
         </div>
         <div class="row">
-            <div class="3u">
+            <div class="col-md-3">
                 <img src="images/generalVizIcon.jpg">
                 <p>
                     VizTool - An application for visualising generic forms of multi-dimensional or time-varying data.
                 </p>
             </div>
-            <div class="3u">
+            <div class="col-md-3">
                 <img src="images/footVizIcon.jpg">
                 <p>
                     Sports data - Visualisation and analysis of sporting results, in this case football.
                 </p>
             </div>
-            <div class="3u">
+            <div class="col-md-3">
                 <img src="images/energyIcon.jpg">
                 <p>
                     EnergyViz - Comparison of energy usage for cinema screenings over time.
                 </p>
             </div>
-            <div class="3u">
+            <div class="col-md-3">
                 <img src="images/sketcherIcon.jpg">
                 <p>
                     TrajectASketch - A trajectory sketching tool.
@@ -149,24 +138,24 @@
     </div>
     <div id="contentOther">
         <div class="row">
-            <div class="3u">
+            <div class="col-md-3">
                 &nbsp;
             </div>
-            <div class="6u">
+            <div class="col-md-6">
                 <h2>Miscellaneous Tools</h2>
             </div>
-            <div class="3u">
+            <div class="col-md-3">
                 &nbsp;
             </div>
         </div>
         <div class="row">
-            <div class="6u">
+            <div class="col-md-6">
                 <img src="images/generalVizIcon.jpg">
                 <p>
                     2D - Visualisation of 2-dimensional data, an alternative to 3D.
                 </p>
             </div>
-            <div class="6u">
+            <div class="col-md-6">
                 <img src="images/footVizIcon.jpg">
                 <p>
                     Interface - A generic visualisation interface to showcase particular objects.
@@ -175,8 +164,6 @@
         </div>
     </div>
 </div>
-
-<script src="js/ui.js"></script>
 
 </body>
 </html>

@@ -1,45 +1,7 @@
 /* Framework styles */
-/* Reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: 100%;
-    font-family: inherit;
-    vertical-align: baseline;
-}
-#WebGL-output {
-    /* set margin to 0 and overflow to hidden, to go fullscreen */
-    margin: 0;
-    overflow: hidden;
-}
-.header {
-    position: absolute;
-    right: 5%;
-    top: 5%;
-}
-.header h1 {
-    text-align: right;
-    margin: 0.2em 0;
-    font-size: 2.5em;
-    font-weight: 300;
-    font-family: 'open_sansregular';
-}
-.header h2 {
-    font-weight: 300;
-    color: #525252;
-    font-family: 'open_sansregular';
-}
+/* Bootstrap does reset */
+
+/* Common styles */
 @font-face {
     font-family: 'open_sansregular';
     src: url('../fonts/opensans-regular-webfont.eot');
@@ -58,43 +20,116 @@ html {
 body {
 
 }
-/*
-Add transition to containers so they can push in and out.
-*/
-#layout,
-#menu,
-.menu-link {
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
+.row {
+    background-color: #080808;
 }
 
-/*
-This is the parent `<div>` that contains the menu and the content area.
-*/
 
-.hidden {
-    display: none;
+
+
+/* Main page styles */
+#WebGL-output {
+    /* set margin to 0 and overflow to hidden, to go fullscreen */
+    margin: 0;
+    overflow: hidden;
 }
-#layout {
-    opacity: 1;
-    position: relative;
-    padding-left: 0;
+.header {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    text-align: right;
 }
-#layout.active {
-    position: relative;
-    left: 150px;
+.header h1 {
+    margin: 0.2em 0;
 }
-#layout.active #menu {
-    left: 150px;
-    width: 150px;
+.header h2 {
+
+}
+#title {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    text-align: center;
+}
+#title h1 {
+    color: #e28900;
+}
+#title p {
+    font-size: 1vw;
+    color: #4a4a4a;
+}
+#title img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 2%;
+}
+#menu {
+    margin-top: 5%;
 }
 
-#layout.active .menu-link {
-    left: 150px;
+
+
+/*Research page */
+#researchTitle {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    text-align: left;
 }
+#researchTitle h1 {
+    color: #e28900;
+}
+#researchTitle p {
+    width: 50%;
+    text-align: justify;
+}
+#researchTitle img {
+    width: 17.5%;
+    border-radius: 15px;
+}
+#researchGallery {
+    margin-left: 15%;
+}
+
+
+/* Projects page */
+#projectsTitle {
+    position: absolute;
+    top: 7.5%;
+    left: 15%;
+}
+#projectsTitle h1 {
+    color: #e28900;
+}
+#projectsTitle p {
+    width: 50%;
+    text-align: justify;
+}
+#gallery {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    text-align: center;
+}
+#gallery .row {
+    background-color: transparent;
+}
+#gallery img {
+    width: 50%;
+    border-radius: 5px;
+}
+#gallery p {
+    background-color: #c78939;
+    color: #191818;
+    border-radius: 5px;
+    width: 65%;
+    margin: 0 auto;
+}
+#gallery .row {
+    margin-bottom: 2%;
+}
+
+
 
 
 
@@ -130,45 +165,8 @@ This is the parent `<div>` that contains the menu and the content area.
     z-index: -1;
     content: "";
 }
-/*
-The content `<div>` is where all your content goes.
-*/
-#title {
-    position: absolute;
-    top: 15%;
-    left: 15%;
-    text-align: center;
-}
-#title h1 {
-    color: #e28900;
-    font-size: 2.5em;
-}
-#title p {
-    font-weight: 300;
-    color: #525252;
-    text-align: justify;
-}
-#title img {
-    width: 50%;
-    border-radius: 10px;
-    margin-top: 2%;
-}
-#titleImage img {
-    width: 120%;
-}
-#description {
-    position: absolute;
-    top: 7%;
-    left: 10%;
-}
-#description h2 {
-    color: #e28900;
-    font-size: 2.5em;
-    text-align: center;
-}
-#description p {
-    text-align: justify;
-}
+
+
 .section-subhead {
     width: 30%;
     text-align: center;
@@ -185,167 +183,7 @@ The content `<div>` is where all your content goes.
 }
 
 
-/*
-The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
-appears on the left side of the page.
-*/
 
-#menu {
-    margin-left: -150px; /* "#menu" width */
-    width: 150px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #191818;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
-/*
-All anchors inside the menu should be styled like this.
-*/
-#menu a {
-    color: #999;
-    border: none;
-    padding: 0.6em 0 0.6em 0.6em;
-}
-
-/*
-Remove all background/borders, since we are applying them to #menu.
-*/
-#menu .pure-menu,
-#menu .pure-menu ul {
-    border: none;
-    background: transparent;
-}
-
-/*
-Add that light border to separate items into groups.
-*/
-#menu .pure-menu ul,
-#menu .pure-menu .menu-item-divided {
-    border-top: 1px solid #333;
-}
-/*
-Change color of the anchor links on hover/focus.
-*/
-#menu .pure-menu li a:hover,
-#menu .pure-menu li a:focus {
-    background: #333;
-}
-
-/*
-This styles the selected menu item `<li>`.
-*/
-#menu .pure-menu-selected {
-    background: #1f8dd6;
-}
-#menu .pure-menu-heading {
-    background: #000000;
-}
-/*
-This styles a link within a selected menu item `<li>`.
-*/
-#menu .pure-menu-selected a {
-    color: #fff;
-}
-
-/*
-This styles the menu heading.
-*/
-#menu .pure-menu-heading {
-    font-size: 110%;
-    color: #fff;
-    margin: 0;
-}
-
-/* -- Dynamic Button For Responsive Menu -------------------------------------*/
-
-/*
-The button to open/close the Menu is custom-made and not part of Pure. Here's
-how it works:
-*/
-
-/*
-`.menu-link` represents the responsive menu toggle that shows/hides on
-small screens.
-*/
-.menu-link {
-    position: fixed;
-    display: block; /* show this only on small screens */
-    top: 0;
-    left: 0; /* "#menu width" */
-    background: #000;
-    background: rgba(0,0,0,0.7);
-    font-size: 10px; /* change this value to increase/decrease button size */
-    z-index: 10;
-    width: 2em;
-    height: auto;
-    padding: 2.1em 1.6em;
-}
-
-.menu-link:hover,
-.menu-link:focus {
-    background: #000;
-}
-
-.menu-link span {
-    position: relative;
-    display: block;
-}
-
-.menu-link span,
-.menu-link span:before,
-.menu-link span:after {
-    background-color: #fff;
-    width: 100%;
-    height: 0.2em;
-}
-
-.menu-link span:before,
-.menu-link span:after {
-    position: absolute;
-    margin-top: -0.6em;
-    content: " ";
-}
-
-.menu-link span:after {
-    margin-top: 0.6em;
-}
-
-
-/* -- Responsive Styles (Media Queries) ------------------------------------- */
-
-/*
-Hides the menu at `48em`, but modify this based on your app's needs.
-*/
-@media (min-width: 48em) {
-
-    .header,
-    .content {
-        padding-left: 2em;
-        padding-right: 2em;
-    }
-
-    #layout {
-        padding-left: 150px; /* left col width "#menu" */
-        left: 0;
-    }
-    #menu {
-        left: 150px;
-    }
-
-    .menu-link {
-        position: fixed;
-        left: 150px;
-        display: none;
-    }
-
-    #layout.active .menu-link {
-        left: 150px;
-    }
-}
 
 /* Project lis styles */
 .projects {
@@ -397,26 +235,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     text-align: left;
     margin: 5px;
 }
-#gallery {
-    position: absolute;
-    top: 20%;
-    left: 30%;
-    text-align: center;
-}
-#gallery img {
-    width: 50%;
-    border-radius: 5px;
-}
-#gallery p {
-    background-color: #c78939;
-    color: #191818;
-    border-radius: 5px;
-    width: 65%;
-    margin: 0 auto;
-}
-#gallery .row {
-    margin-bottom: 2%;
-}
+
 #content h2 {
     font-size: 1.2vw;
 }

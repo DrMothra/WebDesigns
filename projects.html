@@ -11,105 +11,81 @@
     <script type="text/javascript" src="js/three71.js"></script>
     <script type="text/javascript" src="js/stats.js"></script>
     <script type="text/javascript" src="js/TrackballControls.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/baseApp.js?v=0.2"></script>
     <script type="text/javascript" src="js/jquery.colorbox-min.js"></script>
-    <script type="text/javascript" src="js/skel.min.js?v=0.1"></script>
     <script type="text/javascript" src="js/projects.js?v=0.1"></script>
 
-    <link rel="stylesheet" href="css/pure-min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css?v=0.1">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css?v=0.1">
     <link rel="stylesheet" href="css/colorbox.css">
     <link rel="stylesheet" href="css/websiteStyles.css?v=0.1">
 
 </head>
 <body>
 
-<div id="layout">
-    <!-- Menu toggle -->
-    <a href="#menu" id="menuLink" class="menu-link">
-        <!-- Hamburger icon -->
-        <span></span>
-    </a>
+<div class="container-fluid">
 
-    <div id="menu">
-        <div class="pure-menu pure-menu-open">
-            <a class="pure-menu-heading" href="index.html">Home</a>
-            <ul>
-                <li><a href="research.html">Research</a></li>
-                <li class="pure-menu-selected">
-                    <a href="#">Projects</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="http://www.cs.nott.ac.uk/~atg/blog">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <div class="row">
+        <div class="col-md-1">
+            <div id="menu">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li class="active"><a href="projects.html">Projects</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="http://www.cs.nott.ac.uk/~atg/blog">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
+        <div class="col-md-11">
+            <div id="WebGL-output">
 
-    <div id="WebGL-output">
-
+            </div>
+        </div>
     </div>
 
 </div>
 
 <div class="header">
     <h1>Projects</h1>
-    <h2>How I make a living</h2>
+    <h3 class="text-muted">How I make a living</h3>
 </div>
 
-<div id="description">
-    <div class="row">
-        <div class="3u">
-            &nbsp;
-        </div>
-        <div class="6u">
-            <h2>Projects</h2>
-        </div>
-        <div class="3u">
-            &nbsp;
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="3u">
-            &nbsp;
-        </div>
-        <div class="6u">
-            <p>
-                I have worked on a large number of diverse and interesting projects. A selection of these are illustrated below. Clicking on the images will either open the respective
-                project webpage or give further information. Many of the projects have an associated demonstration in the portfolio section.
-            </p>
-        </div>
-        <div class="3u">
-            &nbsp;
-        </div>
-    </div>
+<div id="projectsTitle">
+    <h1>Projects</h1>
+    <p>
+        I have worked on a large number of diverse and interesting projects. A selection of these are illustrated below. Clicking on the images will either open the respective
+        project webpage or give further information. Many of the projects have an associated demonstration in the portfolio section.
+    </p>
 </div>
 
-
-<div id="gallery">
+<div id="gallery" class="container-fluid">
     <div class="row">
-        <div class="4u">
+        <div class="col-md-4">
             <a href="http://3d-pitoti.eu/"><img src="images/pitotiLogo256.png"></a>
             <p>PITOTI</p>
         </div>
-        <div class="4u">
+        <div class="col-md-4">
             <a href="http://www.blasttheory.co.uk/projects/karen/"><img src="images/karen256.png"></a>
             <p>KAREN</p>
         </div>
-        <div class="4u">
+        <div class="col-md-4">
             <a href="http://performingdata.wp.horizon.ac.uk/"><img src="images/pdp256.png"></a>
             <p>PDP</p>
         </div>
     </div>
     <div class="row">
-        <div class="4u">
+        <div class="col-md-4">
             <a href="http://www.magellanproject.eu/"><img src="images/magellanLogo256.png"></a>
             <p>MAGELLAN</p>
         </div>
-        <div class="4u">
+        <div class="col-md-4">
             <a href="http://www.chessexperience.eu/"><img src="images/logoChess256.png"></a>
             <p>CHESS</p>
         </div>
-        <div class="4u">
+        <div class="col-md-4">
             <a class="lightGlu" href="images/Glu4D256.jpg" title="Glu4D video communication system"><img src="images/Glu4D256.jpg"></a>
             <a class="lightGlu hidden" href="images/jvrc1.jpg" title="Lets users communicate in real-time"><img src="images/jvrc1.jpg"></a>
             <a class="lightGlu hidden" href="images/faceToface.jpg" title="Also used in education"><img src="images/faceToface.jpg"></a>
@@ -117,37 +93,35 @@
         </div>
     </div>
     <div class="row">
-        <div class="4u">
+        <div class="col-md-4">
             <a href="http://cospatial.fbk.eu/"><img src="images/cospatialLogo256.png"></a>
             <p>COSPATIAL</p>
         </div>
-        <div class="4u">
+        <div class="col-md-4">
             <a href="http://www.blasttheory.co.uk/projects/flypad/"><img src="images/flypadLogo256.jpg"></a>
             <p>FLYPAD</p>
         </div>
-        <div class="4u">
+        <div class="col-md-4">
             <a href="https://www.nottingham.ac.uk/impactcampaign/campaignpriorities/ingenuity/surgerysimulation/surgerysimulation.aspx"><img src="images/simulationLogo256.jpg"></a>
             <p>Simulation</p>
         </div>
     </div>
     <div class="row">
-        <div class="4u">
+        <div class="col-md-4">
             &nbsp;
         </div>
-        <div class="4u">
+        <div class="col-md-4">
             <a class="lightMedical" href="images/imagingLogo256.jpg" title="Volume rendered medical data"><img src="images/imagingLogo256.jpg"></a>
             <a class="lightMedical hidden" href="images/skull.png" title="Realistic medical modelling"><img src="images/skull.png"></a>
             <a class="lightMedical hidden" href="images/brainModel.jpg" title="Solid modelling of brain"><img src="images/brainModel.jpg"></a>
             <a class="lightMedical hidden" href="images/interface.jpg" title="Tools for tumour detection"><img src="images/interface.jpg"></a>
             <p>Medical Imaging</p>
         </div>
-        <div class="4u">
+        <div class="col-md-4">
             &nbsp;
         </div>
     </div>
 </div>
-
-<script src="js/ui.js"></script>
 
 </body>
 </html>

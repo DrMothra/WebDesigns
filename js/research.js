@@ -96,7 +96,7 @@ Website.prototype.update = function() {
 
 $(document).ready(function() {
     //Initialise app
-    skel.init();
+
     var container = document.getElementById("WebGL-output");
     var app = new Website();
     app.init(container);
