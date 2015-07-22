@@ -23,8 +23,15 @@ body {
 .row {
     background-color: #080808;
 }
-
-
+.fixedHeader {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    text-align: right;
+}
+.fixedHeader h1 {
+    margin: 0.2em 0;
+}
 
 
 /* Main page styles */
@@ -34,9 +41,7 @@ body {
     overflow: hidden;
 }
 .header {
-    position: absolute;
-    right: 5%;
-    top: 5%;
+
     text-align: right;
 }
 .header h1 {
@@ -65,15 +70,14 @@ body {
 }
 #menu {
     margin-top: 5%;
+    height: 100vh;
 }
 
 
 
 /*Research page */
 #researchTitle {
-    position: absolute;
-    top: 15%;
-    left: 15%;
+
     text-align: left;
 }
 #researchTitle h1 {
@@ -90,7 +94,10 @@ body {
 #researchGallery {
     margin-left: 15%;
 }
-
+#researchContents {
+    height: 100vh;
+    background-color: #b7b7b7;
+}
 
 /* Projects page */
 #projectsTitle {
@@ -117,11 +124,13 @@ body {
 #gallery img {
     width: 50%;
     border-radius: 5px;
+    padding-bottom: 3px;
 }
 #gallery p {
-    background-color: #c78939;
-    color: #191818;
+    color: #c78939;
+    background-color: #4a4a4a;
     border-radius: 5px;
+    border: 2px solid #c78939;
     width: 65%;
     margin: 0 auto;
 }
@@ -130,121 +139,29 @@ body {
 }
 
 
-
-
-
-#trajectlayout {
-    opacity: 1;
-    position: relative;
-    padding-left: 0;
-}
-#trajectlayout.active {
-    position: relative;
-    left: 150px;
-}
-#trajectlayout.active #menu {
-    left: 150px;
-    width: 150px;
-}
-
-#trajectlayout.active .menu-link {
-    left: 150px;
-}
-
-#trajectlayout::after {
-    margin-left: 70%;
-    max-width: 530px;
-    background: url(../images/pencil.jpeg) no-repeat;
-    background-size: 85%;
-    opacity: 0.2;
+/* Portfolio page */
+#portfolioTitle {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    content: "";
+    top: 7.5%;
+    left: 15%;
 }
-
-
-.section-subhead {
-    width: 30%;
-    text-align: center;
-    margin: 20px auto;
-    color: #333333;
-    background-color: #b2b2b2;
-    border-radius: 5px;
+#portfolioTitle h1 {
+    color: #e28900;
 }
-.footer {
-    background: #ffffff;
-    font-size: 0.75em;
-    color: #888888;
-    text-align: center;
-}
-
-
-
-
-/* Project lis styles */
-.projects {
-    list-style: none;
-}
-.projects li {
-    width: 15%;
-    text-align: center;
-    background-color: #b2b2b2;
-    border-radius: 5px;
-    margin: 10px 10px 10px 20px;
-}
-.portfolio {
-    list-style: none;
-}
-.portfolio li {
-    width: 30%;
-    text-align: center;
-    background-color: #b2b2b2;
-    border-radius: 5px;
-    margin: 10px auto;
-}
-.sub-portfolio li {
+#portfolioTitle p {
     width: 50%;
-}
-.sub-portfolio img {
-    display: block;
-    margin: 5px auto;
-}
-
-.content-list {
-    margin: 0px 0px 5px 10px;
-}
-.description {
-    text-align: center;
-    font-size: 1em;
-    margin: 0px;
-}
-.descriptionExtended {
-    text-align: center;
-    font-size: 1em;
-    margin: 5px 5px 10px 5px;
-}
-.fix-centre {
-    display: block;
-    margin: 5px auto;
-}
-.summary {
-    text-align: left;
-    margin: 5px;
-}
-
-#content h2 {
-    font-size: 1.2vw;
-}
-#content p {
     text-align: justify;
-    font-size: 0.8vw;
 }
-#content img {
-    width: 30%;
-    float: left;
-    padding-right: 5px;
+#portfolioTitle img {
+    width: 45%;
+    border-radius: 10px;
 }
+#content .row,
+#contentTools .row,
+#contentOther .row {
+    background-color: transparent;
+}
+
+
+
+
