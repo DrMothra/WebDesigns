@@ -40,16 +40,7 @@ body {
     margin: 0;
     overflow: hidden;
 }
-.header {
 
-    text-align: right;
-}
-.header h1 {
-    margin: 0.2em 0;
-}
-.header h2 {
-
-}
 #title {
     position: absolute;
     top: 15%;
@@ -76,8 +67,18 @@ body {
 
 
 /*Research page */
-#researchTitle {
+.header {
+    margin: 2% 2% 0 0;
+    text-align: right;
+}
+.header h1 {
 
+}
+.header h2 {
+
+}
+#researchTitle {
+    margin: 1% 0 0 2%;
     text-align: left;
 }
 #researchTitle h1 {
@@ -92,7 +93,8 @@ body {
     border-radius: 15px;
 }
 #researchGallery {
-    margin-left: 15%;
+    text-align: center;
+    margin: 2% 0 0 0%;
 }
 #researchContents {
     height: 100vh;
@@ -101,9 +103,8 @@ body {
 
 /* Projects page */
 #projectsTitle {
-    position: absolute;
-    top: 7.5%;
-    left: 15%;
+    margin: 1% 0 0 2%;
+    text-align: left;
 }
 #projectsTitle h1 {
     color: #e28900;
@@ -112,10 +113,10 @@ body {
     width: 50%;
     text-align: justify;
 }
+#projectContents {
+    background-color: #b7b7b7;
+}
 #gallery {
-    position: absolute;
-    top: 20%;
-    left: 30%;
     text-align: center;
 }
 #gallery .row {

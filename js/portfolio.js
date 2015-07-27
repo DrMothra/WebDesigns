@@ -55,7 +55,6 @@ Website.prototype.createScene = function() {
     this.currentCube = this.startCube;
 
     //Research object
-    var _this = this;
     this.square = 240;
     var tex = THREE.ImageUtils.loadTexture( "textures/portfolio.jpg" );
     var plane = new THREE.PlaneGeometry(50, 50, 8, 8);
