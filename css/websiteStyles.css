@@ -20,9 +20,7 @@ html {
 body {
 
 }
-.row {
-    background-color: #080808;
-}
+
 .fixedHeader {
     position: absolute;
     right: 5%;
@@ -60,8 +58,7 @@ body {
     margin-top: 2%;
 }
 #menu {
-    margin-top: 5%;
-    height: 100vh;
+    background-color: #000000;
 }
 
 
@@ -141,10 +138,11 @@ body {
 
 
 /* Portfolio page */
+#portfolioContents {
+    background-color: #b7b7b7;
+}
 #portfolioTitle {
-    position: absolute;
-    top: 7.5%;
-    left: 15%;
+
 }
 #portfolioTitle h1 {
     color: #e28900;
@@ -155,13 +153,12 @@ body {
 }
 #portfolioTitle img {
     width: 45%;
-    border-radius: 10px;
+    border-radius: 100px;
 }
-#content .row,
-#contentTools .row,
-#contentOther .row {
-    background-color: transparent;
+#portfolioGallery {
+    background-color: #b7b7b7;
 }
+
 
 
 

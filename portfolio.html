@@ -8,11 +8,7 @@
     <title>Dr Tony Glover &ndash; Portfolio</title>
 
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="js/three71.js"></script>
-    <script type="text/javascript" src="js/stats.js"></script>
-    <script type="text/javascript" src="js/TrackballControls.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/baseApp.js?v=0.2"></script>
     <script type="text/javascript" src="js/portfolio.js?v=0.1"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css?v=0.1">
@@ -24,9 +20,9 @@
 
 <div class="container-fluid">
 
-    <div class="row">
-        <div class="col-md-1">
-            <div id="menu">
+    <div id="menu" class="row">
+        <div  class="col-md-1">
+            <div >
                 <ul class="nav nav-pills nav-stacked">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="research.html">Research</a></li>
@@ -37,9 +33,10 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-11">
-            <div id="WebGL-output">
-
+        <div id="portfolioContents" class="col-md-11">
+            <div class="header">
+                <h1>Portfolio</h1>
+                <h3 class="text-muted">All these things that I have done</h3>
             </div>
             <div id="portfolioTitle">
                 <h1>Portfolio</h1>
@@ -48,7 +45,7 @@
                     The data being visualised may be broadly classified into two categories - live, dynamically changing data and more static, fixed sources.
                 </p>
 
-                <div id="content" class="container-fluid">
+                <div id="portfolioGallery" class="container-fluid">
                     <div class="row">
                         <div class="col-md-3">
                             &nbsp;
@@ -86,8 +83,8 @@
                             </p>
                         </div>
                     </div>
-                </div>
-                <div id="contentTools">
+
+
                     <div class="row">
                         <div class="col-md-3">
                             &nbsp;
@@ -125,8 +122,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
-                <div id="contentOther">
+
                     <div class="row">
                         <div class="col-md-3">
                             &nbsp;
@@ -163,11 +159,6 @@
         </div>
     </div>
 
-</div>
-
-<div class="header">
-    <h1>Portfolio</h1>
-    <h3 class="text-muted">All these things that I have done</h3>
 </div>
 
 </body>
