@@ -114,7 +114,7 @@ canvas {
 }
 #projectsTitle p {
     width: 50%;
-    text-align: justify;
+
 }
 #projectContents {
     background-color: #b7b7b7;
@@ -127,14 +127,15 @@ canvas {
 }
 #gallery img {
     width: 50%;
-    border-radius: 5px;
+    border-radius: 15px;
     padding-bottom: 3px;
+    border: 2px solid #c78939;
 }
 #gallery p {
     color: #c78939;
-    background-color: #4a4a4a;
+
     border-radius: 5px;
-    border: 2px solid #c78939;
+
     width: 65%;
     margin: 0 auto;
 }
@@ -163,8 +164,12 @@ canvas {
 }
 #portfolioGallery {
     background-color: #b7b7b7;
+    text-align: center;
 }
-
+#portfolioGallery p {
+    text-align: center;
+    color: #c78939;
+}
 
 
 
