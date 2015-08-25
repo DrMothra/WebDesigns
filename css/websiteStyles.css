@@ -32,10 +32,13 @@ body {
 }
 
 canvas {
-    border-radius: 15px;
     padding: 0;
     overflow: hidden;
 }
+.black {
+    background-color: #000000;
+}
+
 
 /* Main page styles */
 #WebGL-output {
@@ -63,9 +66,6 @@ canvas {
     border-radius: 10px;
     margin-top: 2%;
 }
-#menu {
-    background-color: #000000;
-}
 
 
 
@@ -79,6 +79,12 @@ canvas {
 }
 .header h2 {
 
+}
+#researchWebGL-Output {
+    border-radius: 15px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 #researchTitle {
     margin: 1% 0 0 2%;
@@ -103,6 +109,8 @@ canvas {
     height: 100vh;
     background-color: #b7b7b7;
 }
+
+
 
 /* Projects page */
 #projectsTitle {
@@ -129,15 +137,16 @@ canvas {
     width: 50%;
     border-radius: 15px;
     padding-bottom: 3px;
-    border: 2px solid #c78939;
 }
 #gallery p {
     color: #c78939;
 
     border-radius: 5px;
-
-    width: 65%;
+    border: 2px solid #c78939;
+    width: 35%;
     margin: 0 auto;
+    background-color: #5a5a5a;
+    padding: 3px 0;
 }
 #gallery .row {
     margin-bottom: 2%;
@@ -168,9 +177,20 @@ canvas {
 }
 #portfolioGallery p {
     text-align: center;
-    color: #c78939;
+    color: #79472d;
 }
 
 
+/* Contacts page */
+#contactContents {
+    background-color: #b7b7b7;
+}
+#contactTitle h1 {
+    color: #e28900;
+}
+#contactTitle img {
+    width: 17.5%;
+    text-align: right;
+}
 
 

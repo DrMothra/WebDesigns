@@ -55,7 +55,7 @@ Interface.prototype.update = function() {
 
 $(document).ready(function() {
     //Init app
-    var container = document.getElementById("WebGL-output");
+    var container = document.getElementById("researchWebGL-Output");
     var app = new Interface();
     app.init(container);
     app.createScene();
