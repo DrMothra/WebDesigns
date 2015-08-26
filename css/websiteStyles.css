@@ -188,9 +188,15 @@ canvas {
 #contactTitle h1 {
     color: #e28900;
 }
-#contactTitle img {
+#contactIcons {
+    text-align: center;
+}
+#contactIcons img {
     width: 17.5%;
-    text-align: right;
+}
+#contactIcons p {
+    margin-top: 5%;
+    text-align: left;
 }
 
 
