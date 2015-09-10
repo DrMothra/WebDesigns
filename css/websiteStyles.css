@@ -155,6 +155,7 @@ canvas {
 
 /* Portfolio page */
 #portfolioContents {
+    height: 100vh;
     background-color: #b7b7b7;
 }
 #portfolioTitle {
@@ -179,10 +180,20 @@ canvas {
     text-align: center;
     color: #79472d;
 }
-
+.infoPanel {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    padding: 10px 5px;
+    border-radius: 10px;
+    background-color: rgba(119, 119, 119, 0.50);
+    color: #7fa5ff;
+    text-align: center;
+}
 
 /* Contacts page */
 #contactContents {
+    height: 100vh;
     background-color: #b7b7b7;
 }
 #contactTitle h1 {
