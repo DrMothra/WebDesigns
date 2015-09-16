@@ -101,6 +101,9 @@ canvas {
     width: 17.5%;
     border-radius: 15px;
 }
+.hint p {
+    padding: 5% 10%;
+}
 #researchGallery {
     text-align: center;
     margin: 2% 0 0 0%;
@@ -168,28 +171,37 @@ canvas {
     width: 50%;
     text-align: justify;
 }
-#portfolioTitle img {
-    width: 45%;
-    border-radius: 100px;
-}
-#portfolioGallery {
+.portfolioGallery {
     background-color: #b7b7b7;
     text-align: center;
 }
-#portfolioGallery p {
+.portfolioGallery p {
     text-align: center;
     color: #79472d;
 }
+.portfolioGallery img {
+    width: 45%;
+    border-radius: 50%;
+}
+.infoContainer {
+    position: relative;
+}
 .infoPanel {
     position: absolute;
-    width: 10%;
-    height: 10%;
+    width: 50%;
     padding: 10px 5px;
     border-radius: 10px;
-    background-color: rgba(119, 119, 119, 0.50);
-    color: #7fa5ff;
+    background-color: rgba(119, 119, 119, 0.85);
     text-align: center;
+    opacity: 0;
 }
+.infoPanel p {
+    color: #ffdb2a;
+}
+.infoContainer:hover .infoPanel {
+    opacity: 1;
+}
+
 
 /* Contacts page */
 #contactContents {

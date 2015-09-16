@@ -91,7 +91,6 @@ $(document).ready(function() {
     var app = new Website();
     app.init(container);
     app.createScene();
-
     //GUI callbacks
 
     app.run();
