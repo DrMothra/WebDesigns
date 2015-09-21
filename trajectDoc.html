@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+
+    <title>TrajectASketch &ndash; Documentation</title>
+
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure.css">
+    <link rel="stylesheet" href="css/mainStyles.css?v=1.0">
+</head>
+<body>
+
+<div id="trajectlayout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu pure-menu-open">
+            <a class="pure-menu-heading" href="index.html">Home</a>
+            <ul>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="webgl.html">WebGL</a></li>
+                <li  class="pure-menu-selected">
+                    <a href="traject.html">TrajectASketch</a></li>
+                <li><a href="http://www.cs.nott.ac.uk/~atg/blog">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="header" id="myHeader">
+            <h1>TrajectASketch</h1>
+            <h2>The trajectory sketching tool</h2>
+        </div>
+        <div class="content">
+            <h2 class="content-subhead">Documentation</h2>
+            <p>
+                Here you will find all the trajectory sketching resources, including manual, tutorial and accompanying video material.
+                If you require additional information or would like to leave feedback/report a bug then please use the form at the bottom of the page.
+            </p>
+            <ul class="projects">
+                <li>
+                    Manual
+                </li>
+                <div class="pure-g">
+                    <div class="pure-u-1-5">
+                        <a href="http://www.cs.nott.ac.uk/~atg/Documentation/SketcherManualv3.pdf">
+                            <img class="pure-img-responsive gallerySquareSmall fix-centre" src="images/whiteDocument.png">
+                        </a>
+                    </div>
+                    <div class="pure-u-4-5">
+                        <p class="content-list">
+                            Clicking the image on the left will open up the sketching tool manual in the current browser window.
+                        </p>
+                    </div>
+                </div>
+                <li>
+                    Tutorial
+                </li>
+                <div class="pure-g">
+                    <div class="pure-u-1-5">
+                        <a href="http://www.cs.nott.ac.uk/~atg/Documentation/SketcherTutorialv3.pdf">
+                        <img class="pure-img-responsive gallerySquareSmall fix-centre" src="images/whiteDocument.png">
+                        </a>
+                    </div>
+                    <div class="pure-u-4-5">
+                        <p class="content-list">
+                            Clicking the image on the left will open up the sketching tool tutorial in the current browser window.
+                        </p>
+                    </div>
+                </div>
+            </ul>
+            <p class="section-subhead">
+                Videos
+            </p>
+            <p class="description">
+                Click on the link to go to the desired video.
+            </p>
+            <div class="pure-g">
+                <div class="pure-u-1-5">
+                    <a href="video/lines.mp4" target="_blank">
+                    <img class="pure-img-responsive gallerySquareSmall fix-centre" src="images/lines.png">
+                    </a>
+                    <p class="description">
+                        Drawing lines
+                    </p>
+                </div>
+                <div class="pure-u-1-5">
+                    <a href="video/circles.mp4" target="_blank">
+                    <img class="pure-img-responsive gallerySquareSmall fix-centre" src="images/circle.png">
+                    </a>
+                    <p class="description">
+                        Drawing circles
+                    </p>
+                </div>
+                <div class="pure-u-1-5">
+                    <a href="video/text.mp4" target="_blank">
+                    <img class="pure-img-responsive gallerySquareSmall fix-centre" src="images/text.png">
+                    </a>
+                    <p class="description">
+                        Adding text
+                    </p>
+                </div>
+                <div class="pure-u-1-5">
+                    <a href="video/frame.mp4" target="_blank">
+                    <img class="pure-img-responsive gallerySquareSmall fix-centre" src="images/frames.png">
+                    </a>
+                    <p class="description">
+                        Adding frames
+                    </p>
+                </div>
+                <div class="pure-u-1-5">
+                    <a href="video/selections.mp4" target="_blank">
+                    <img class="pure-img-responsive gallerySquareSmall fix-centre" src="images/edit.png">
+                    </a>
+                    <p class="description">
+                        Editing a selection
+                    </p>
+                </div>
+            </div>
+            <p class="section-subhead">
+                Sketches
+            </p>
+            <p class="description">
+                Click on the required sketch to download it.
+            </p>
+
+            <div class="pure-g">
+                <div class="pure-u-1-2">
+                    <a href="json/ExperienceBackground.json" download>
+                    <img class="pure-img-responsive gallerySquareSmall fix-centre" src="images/background.jpg">
+                    </a>
+                    <p class="description">
+                        Background sketch
+                    </p>
+                </div>
+                <div class="pure-u-1-2">
+                    <a href="json/Experience1.json" download>
+                    <img class="pure-img-responsive gallerySquareSmall fix-centre" src="images/example1.jpg">
+                    </a>
+                    <p class="description">
+                        Completed tutorial
+                    </p>
+                </div>
+            </div>
+            <p class="section-subhead">
+                Media
+            </p>
+            <p class="descriptionExtended">
+                The following media are for items 1 to 4 of the first experience.
+                To download the images, right click on them and select Copy image URL. This can then be imported into the sketcher tool.
+                To copy the text, highlight and select Copy, this can then be pasted into the sketcher tool text area.
+            </p>
+            <div class="pure-g">
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive gallery4 fix-centre" src="images/Exp1Item1.jpg">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive gallery4 fix-centre" src="images/Exp1Item2.jpg">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive gallery4 fix-centre" src="images/Exp1Item3.jpg">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive gallery4 fix-centre" src="images/Exp1Item4.jpg">
+                </div>
+            </div>
+            <div class="pure-g">
+                <div class="pure-u-1-4">
+                    <p class="summary">
+                        Man Coming out of Woman
+                        Music: Tchaikovsky - Romeo and Juliet
+                        Narration: "Stand there with your legs wide apart. What does it feel like?"
+                    </p>
+                </div>
+                <div class="pure-u-1-4">
+                    <p class="summary">
+                        Telephone Conversation
+                        Music: Daft Punk -
+                        Something about us
+                        Narration: "Bring the
+                        phone up to your ear.
+                        Pretend you're answering
+                        a call. Repeat after me:
+                        Hello? Hello?!"
+                        Text: "Sorry, that must
+                        have been really embarrassing!"
+                    </p>
+                </div>
+                <div class="pure-u-1-4">
+                    <p class="summary">
+                        Enlarged VHS cover of Aphex
+                        Twin's Window Licker
+                        Music: Aphex Twin - Window
+                        Licker
+                        Narration: "Crouch down and
+                        blow the person on the cover a
+                        kiss".
+                        Text: "This reminds me of using
+                        the face merger app together."
+                    </p>
+                </div>
+                <div class="pure-u-1-4">
+                    <p class="summary">
+                        Eyes in Space
+                        Music: John Williams - Star
+                        Wars theme
+                        Narration: "March up to the
+                        artwork like you mean
+                        something. Then, roll your
+                        eyes."
+                        Text: "I chose this for you
+                        because of your love of
+                        movies, space and science
+                        fiction."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

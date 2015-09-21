@@ -223,3 +223,13 @@ canvas {
 }
 
 
+/* Trajectories stuff */
+header h1 {
+    text-align: center;
+}
+.intro p {
+    margin: 2% 10%;
+}
+#tool img {
+    width: 50%;
+}
