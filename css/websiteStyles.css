@@ -224,12 +224,43 @@ canvas {
 
 
 /* Trajectories stuff */
+#trajectBody {
+    background-color: #b7b7b7;
+}
 header h1 {
     text-align: center;
+    color: #e28900;
 }
 .intro p {
     margin: 2% 10%;
 }
 #tool img {
+    margin-left: 15%;
     width: 50%;
+}
+#documentation img,
+#examples img {
+    width: 75%;
+}
+#contents p {
+    margin-top: 3%;
+}
+.imageHeader {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    text-align: right;
+}
+.imageHeader img {
+    width: 60%;
+    opacity: 0.45;
+}
+#docs img {
+    width: 50%;
+}
+#videos img {
+    width: 50%;
+}
+#sketches img {
+    width: 20%;
 }
