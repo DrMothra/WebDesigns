@@ -104,7 +104,7 @@ canvas {
     border-radius: 15px;
 }
 .hint p {
-    padding: 5% 10%;
+    margin: 45% 10%;
 }
 #researchGallery {
     text-align: center;
@@ -210,7 +210,11 @@ canvas {
     height: 100vh;
     background-color: #b7b7b7;
 }
-#contactTitle h1 {
+#contactTitle {
+    margin-left: 5%;
+}
+#contactTitle h1,
+#linkTitle h1 {
     color: #e28900;
 }
 #contactIcons {
@@ -230,6 +234,16 @@ canvas {
 #directions {
     margin-top: 5%;
     margin-left: 10%;
+}
+#contactInfo {
+    margin-left: 10%;
+}
+#linkInfo {
+    margin-left: 5%;
+}
+#contactInfo p,
+#linkInfo p {
+    font-size: 1.2vw;
 }
 
 
