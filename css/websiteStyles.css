@@ -20,7 +20,9 @@ html {
 body {
 
 }
-
+.centre {
+    text-align: center;
+}
 .fixedHeader {
     position: absolute;
     right: 5%;
@@ -213,6 +215,7 @@ canvas {
 }
 #contactIcons {
     text-align: center;
+    margin-left: 10%;
 }
 #contactIcons img {
     width: 17.5%;
@@ -221,10 +224,17 @@ canvas {
     margin-top: 5%;
     text-align: left;
 }
+#address img {
+    width: 40%;
+}
+#directions {
+    margin-top: 5%;
+    margin-left: 10%;
+}
 
 
 /* Trajectories stuff */
-#trajectBody {
+.trajectBody {
     background-color: #b7b7b7;
 }
 header h1 {
@@ -243,7 +253,7 @@ header h1 {
     width: 75%;
 }
 #contents p {
-    margin-top: 3%;
+    margin-top: 5%;
 }
 .imageHeader {
     position: absolute;
@@ -255,12 +265,99 @@ header h1 {
     width: 60%;
     opacity: 0.45;
 }
+#docs .subTitle {
+    background-color: #858585;
+    border-radius: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+#docs p {
+    margin-top: 5%;
+}
 #docs img {
     width: 50%;
+}
+#videoInfo h3 {
+    text-align: center;
+    color: #e28900;
+}
+#videos {
+    margin-left: 10%;
 }
 #videos img {
     width: 50%;
 }
+#sketches {
+    text-align: center;
+}
 #sketches img {
     width: 20%;
+}
+#videoInfo p {
+    text-align: center;
+}
+#sketchInfo h3 {
+    text-align: center;
+    color: #e28900;
+}
+#sketchInfo p {
+    text-align: center;
+}
+#mediaInfo {
+    margin-bottom: 2%;
+}
+#mediaInfo h3 {
+    text-align: center;
+    color: #e28900;
+}
+#mediaInfo p {
+    text-align: center;
+}
+#media img {
+    width: 60%;
+}
+#galleries {
+    margin-left: 10%;
+}
+#galleries img {
+    width: 25%;
+    border-radius: 10px;
+    border: 2px solid #4c4c4c;
+}
+#attractGallery {
+    margin-left: 15%;
+}
+#attractGallery img {
+    width: 35%;
+    border-radius: 10px;
+    border: 2px solid #4c4c4c;
+}
+#miscGallery {
+    margin-left: 15%;
+}
+#miscGallery img {
+    width: 35%;
+    border-radius: 10px;
+    border: 2px solid #4c4c4c;
+}
+#museums h3 {
+    text-align: center;
+    color: #e28900;
+}
+#museums p {
+    text-align: center;
+}
+#attractions h3 {
+    text-align: center;
+    color: #e28900;
+}
+#attractions p {
+    text-align: center;
+}
+#misc h3 {
+    text-align: center;
+    color: #e28900;
+}
+#misc p {
+    text-align: center;
 }

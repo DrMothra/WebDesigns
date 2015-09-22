@@ -6,12 +6,12 @@
 
     <title>TrajectASketch &ndash; Documentation</title>
 
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css?v=0.1">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css?v=0.1">
-    <link rel="stylesheet" href="css/websiteStyles.css?v=0.1">
+    <link rel="stylesheet" href="../css/bootstrap.min.css?v=0.1">
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css?v=0.1">
+    <link rel="stylesheet" href="../css/websiteStyles.css?v=0.1">
 </head>
 <body class="trajectBody">
 
@@ -19,7 +19,7 @@
     <h1>Documentation</h1>
 </header>
 <div class="imageHeader">
-    <img src="images/pencil.png">
+    <img src="../images/pencil.png">
 </div>
 <div class="intro">
     <p>
@@ -35,25 +35,30 @@
         </div>
         <div class="col-md-8">
             <div class="row">
-                <div class="col-md-3">
-                    <p>
+                <div class="col-md-3 centre">
+                    <a href="http://www.cs.nott.ac.uk/~psztg1/Documentation/SketcherManualv3.pdf"><img src="../images/whiteDocument.png"></a>
+                    <p class="subTitle">
                         Manual
                     </p>
-                    <img src="images/whiteDocument.png">
                 </div>
                 <div class="col-md-9">
-                    Clicking the image on the left will open up the sketching tool manual in the current browser window.
+                    <p>
+                        Clicking the image on the left will open up the sketching tool manual in the current browser window.
+                    </p>
+
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
-                    <p>
+                <div class="col-md-3 centre">
+                    <a href="http://www.cs.nott.ac.uk/~psztg1/Documentation/SketcherTutorialv3.pdf"><img src="../images/whiteDocument.png"></a>
+                    <p class="subTitle">
                         Tutorial
                     </p>
-                    <img src="images/whiteDocument.png">
                 </div>
                 <div class="col-md-9">
-                    Clicking the image on the left will open up the sketching tool tutorial in the current browser window.
+                    <p>
+                        Clicking the image on the left will open up the sketching tool tutorial in the current browser window.
+                    </p>
                 </div>
             </div>
         </div>
@@ -61,43 +66,46 @@
             &nbsp;
         </div>
     </div>
-    <p>
-        Videos
-    </p>
-    <p>
-        Click on the link to go to the desired video.
-    </p>
+    <div id="videoInfo">
+        <p>
+            <h3>Videos</h3>
+        </p>
+        <p>
+            Click on the link to go to the desired video.
+        </p>
+    </div>
+
     <div id="videos" class="row">
         <div class="col-md-2">
             &nbsp
         </div>
         <div class="col-md-8">
             <div class="col-md-2">
-                <img src="images/lines.png">
+                <a href="http://www.cs.nott.ac.uk/~psztg1/video/lines.mp4" target="_blank"><img src="../images/lines.png"></a>
                 <p>
                     Drawing lines
                 </p>
             </div>
             <div class="col-md-2">
-                <img src="images/circle.png">
+                <a href="http://www.cs.nott.ac.uk/~psztg1/video/circles.mp4" target="_blank"><img src="../images/circle.png"></a>
                 <p>
                     Drawing circles
                 </p>
             </div>
             <div class="col-md-2">
-                <img src="images/text.png">
+                <a href="http://www.cs.nott.ac.uk/~psztg1/video/text.mp4" target="_blank"><img src="../images/text.png"></a>
                 <p>
                     Adding text
                 </p>
             </div>
             <div class="col-md-2">
-                <img src="images/frames.png">
+                <a href="http://www.cs.nott.ac.uk/~psztg1/video/frame.mp4" target="_blank"><img src="../images/frames.png"></a>
                 <p>
                     Adding frames
                 </p>
             </div>
             <div class="col-md-2">
-                <img src="images/edit.png">
+                <a href="http://www.cs.nott.ac.uk/~psztg1/video/selections.mp4" target="_blank"><img src="../images/edit.png"></a>
                 <p>
                     Editing a selection
                 </p>
@@ -107,12 +115,15 @@
             &nbsp
         </div>
     </div>
-    <p>
-        Sketches
-    </p>
-    <p>
-        Click on the required sketch to download it.
-    </p>
+    <div id="sketchInfo">
+        <p>
+            <h3>Sketches</h3>
+        </p>
+        <p>
+            Click on the required sketch to download it.
+        </p>
+    </div>
+
     <div id="sketches">
         <div class="row">
             <div class="col-md-2">
@@ -120,13 +131,13 @@
             </div>
             <div class="col-md-8">
                 <div class="col-md-6">
-                    <img src="images/background.jpg">
+                    <a href="json/ExperienceBackground.json" download><img src="../images/background.jpg"></a>
                     <p>
                         Background sketch
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <img src="images/example1.jpg">
+                    <a href="json/Experience1.json" download><img src="../images/example1.jpg"></a>
                     <p>
                         Completed tutorial
                     </p>
@@ -137,13 +148,17 @@
             </div>
         </div>
     </div>
-    <p>
-        Media
-    </p>
-    <p>
-        The following media are for items 1 to 4 of the first experience. To download the images, right click on them and select Copy image URL.
-        This can then be imported into the sketcher tool. To copy the text, highlight and select Copy, this can then be pasted into the sketcher tool text area.
-    </p>
+    <div id="mediaInfo">
+        <p>
+            <h3>Media</h3>
+        </p>
+        <p>
+            The following media are for items 1 to 4 of the first experience.<br>
+            To download the images, right click on them and select Copy image URL.
+            This can then be imported into the sketcher tool. To copy the text, highlight and select Copy, this can then be pasted into the sketcher tool text area.
+        </p>
+    </div>
+
     <div id="media">
         <div class="row">
             <div class="col-md-2">
@@ -151,27 +166,27 @@
             </div>
             <div class="col-md-8">
                 <div class="col-md-3">
-                    <img src="images/Exp1Item1.jpg">
+                    <img src="../images/exampleImage1.jpg">
                     <p>
                         Man Coming out of Woman Music: Tchaikovsky - Romeo and Juliet Narration: "Stand there with your legs wide apart. What does it feel like?"
                     </p>
                 </div>
                 <div class="col-md-3">
-                    <img src="images/Exp1Item2.jpg">
+                    <img src="../images/exampleImage2.jpg">
                     <p>
                         Telephone Conversation Music: Daft Punk - Something about us Narration: "Bring the phone up to your ear. Pretend you're answering a call.
                         Repeat after me: Hello? Hello?!" Text: "Sorry, that must have been really embarrassing!"
                     </p>
                 </div>
                 <div class="col-md-3">
-                    <img src="images/Exp1Item3.jpg">
+                    <img src="../images/exampleImage3.jpg">
                     <p>
                         Enlarged VHS cover of Aphex Twin's Window Licker Music: Aphex Twin - Window Licker Narration: "Crouch down and blow the person on the cover a kiss".
                         Text: "This reminds me of using the face merger app together."
                     </p>
                 </div>
                 <div class="col-md-3">
-                    <img src="images/Exp1Item4.jpg">
+                    <img src="../images/exampleImage4.jpg">
                     <p>
                         Eyes in Space Music: John Williams - Star Wars theme Narration: "March up to the artwork like you mean something. Then, roll your eyes."
                         Text: "I chose this for you because of your love of movies, space and science fiction."
