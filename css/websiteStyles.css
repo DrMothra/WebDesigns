@@ -31,8 +31,11 @@ body {
 }
 .fixedHeader h1 {
     margin: 0.2em 0;
+    font-size: 2vw;
 }
-
+.fixedHeader h3 {
+    font-size: 1.3vw;
+}
 canvas {
     padding: 0;
     overflow: hidden;
@@ -58,6 +61,7 @@ canvas {
 }
 #title h1 {
     color: #e28900;
+    font-size: 2vw;
 }
 #title p {
     font-size: 1vw;
